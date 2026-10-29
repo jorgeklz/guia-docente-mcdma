@@ -123,11 +123,13 @@ ol.plain ul{margin:6px 0 0;padding-left:20px}
 .tl li:not(:last-child)::after{content:"";position:absolute;right:4px;top:11px;width:8px;height:8px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:rotate(45deg);opacity:.7}
 .tl-dot{position:relative;z-index:1;width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:600;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--green-soft)}
 .tl-body{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:14px;min-width:0}
+.tl-role{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
 .tl-t{font-weight:500;font-size:14px;line-height:1.4}
 .tl-t .ref{display:block;margin-top:2px;white-space:normal}
 .tl-chip{font-size:12.5px;font-weight:500;line-height:1.35;background:var(--green-soft);color:var(--green);padding:4px 12px;border-radius:12px}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tl-dot{color:#06210f}}
 :root[data-theme="dark"] .tl-dot{color:#06210f}
+ol.pad .txt::before{content:counter(d,decimal-leading-zero) ". ";color:var(--green)}
 .stack{display:flex;flex-direction:column;gap:6px}
 .stack .stack{margin-top:8px}
 .plain-sum,details>summary>.txt:first-child:last-of-type{}
@@ -420,8 +422,8 @@ td.no{color:var(--muted)}
 </div></details>
     </div>
     <h2 style="margin-top:32px">Plazos clave</h2>
-    <p class="hint">Términos del reglamento, en orden del proceso. Desliza hacia la derecha para ver todas las etapas.</p>
-    <ol class="tl"><li><span class="tl-dot">1</span><div class="tl-body"><div class="tl-t">Elegir la opción de titulación<span class="ref"> Art. 60</span></div><span class="tl-chip">Mes 3 al mes 5 del programa</span></div></li><li><span class="tl-dot">2</span><div class="tl-body"><div class="tl-t">Análisis del anteproyecto por el Comité<span class="ref"> Art. 64</span></div><span class="tl-chip">30 días</span></div></li><li><span class="tl-dot">3</span><div class="tl-body"><div class="tl-t">Correcciones del anteproyecto<span class="ref"> Art. 66</span></div><span class="tl-chip">15 días · 20 días si se observa por segunda vez</span></div></li><li><span class="tl-dot">4</span><div class="tl-body"><div class="tl-t">Seguimiento del tutor: alerta por falta de reportes del estudiante<span class="ref"> Art. 100</span></div><span class="tl-chip">30 días: notificación · 45 días: informe</span></div></li><li><span class="tl-dot">5</span><div class="tl-body"><div class="tl-t">Revisión antiplagio<span class="ref"> Art. 70</span></div><span class="tl-chip">5 días para tramitar · 5 días para devolver</span></div></li><li><span class="tl-dot">6</span><div class="tl-body"><div class="tl-t">Certificación del tutor<span class="ref"> Art. 71</span></div><span class="tl-chip">Máximo 5 días</span></div></li><li><span class="tl-dot">7</span><div class="tl-body"><div class="tl-t">Informe del revisor (solo tesis)<span class="ref"> Art. 72</span></div><span class="tl-chip">15 días</span></div></li><li><span class="tl-dot">8</span><div class="tl-body"><div class="tl-t">Cambios tras la predefensa (solo tesis)<span class="ref"> Art. 76</span></div><span class="tl-chip">30 días</span></div></li><li><span class="tl-dot">9</span><div class="tl-body"><div class="tl-t">Aviso al estudiante del examen complexivo<span class="ref"> Art. 92</span></div><span class="tl-chip">Al menos 15 días antes</span></div></li><li><span class="tl-dot">10</span><div class="tl-body"><div class="tl-t">Tiempo para titularse sin arancel<span class="ref"> Art. 97</span></div><span class="tl-chip">Hasta dos períodos académicos adicionales</span></div></li></ol>
+    <p class="hint">Lo que debes cumplir como tutor, revisor o miembro del tribunal. Desliza hacia la derecha para ver todos los plazos.</p>
+    <ol class="tl"><li><span class="tl-dot">1</span><div class="tl-body"><span class="tl-role">Tutor</span><div class="tl-t">Informe de avance al Coordinador<span class="ref"> Art. 56</span></div><span class="tl-chip">Cada mes</span></div></li><li><span class="tl-dot">2</span><div class="tl-body"><span class="tl-role">Tutor</span><div class="tl-t">Alerta por falta de reportes del estudiante<span class="ref"> Art. 100</span></div><span class="tl-chip">30 días: notificación · 45 días: informe</span></div></li><li><span class="tl-dot">3</span><div class="tl-body"><span class="tl-role">Tutor</span><div class="tl-t">Revisión antiplagio<span class="ref"> Art. 70</span></div><span class="tl-chip">5 días para tramitar · 5 para devolver</span></div></li><li><span class="tl-dot">4</span><div class="tl-body"><span class="tl-role">Tutor</span><div class="tl-t">Certificación del tutor<span class="ref"> Art. 71</span></div><span class="tl-chip">Máximo 5 días</span></div></li><li><span class="tl-dot">5</span><div class="tl-body"><span class="tl-role">Revisor · solo tesis</span><div class="tl-t">Informe de revisión<span class="ref"> Art. 72</span></div><span class="tl-chip">15 días</span></div></li><li><span class="tl-dot">6</span><div class="tl-body"><span class="tl-role">Tribunal</span><div class="tl-t">Exposición del estudiante<span class="ref"> Art. 75</span></div><span class="tl-chip">20 a 30 minutos</span></div></li><li><span class="tl-dot">7</span><div class="tl-body"><span class="tl-role">Tribunal</span><div class="tl-t">Ausencia de un miembro al iniciar<span class="ref"> Art. 99</span></div><span class="tl-chip">Espera máxima de 15 minutos</span></div></li><li><span class="tl-dot">8</span><div class="tl-body"><span class="tl-role">Tribunal y revisor</span><div class="tl-t">Cambios tras la predefensa (tesis)<span class="ref"> Art. 76</span></div><span class="tl-chip">30 días para el estudiante</span></div></li></ol>
     <div class="pager"><a href="#paso3"><svg class="i"><use href="#i-left"/></svg>3. Durante el módulo</a><a href="#paso5">5. Checklist para pagos<svg class="i"><use href="#i-right"/></svg></a></div>
   </section>
   <!-- PASO 5 -->
@@ -436,7 +438,7 @@ td.no{color:var(--muted)}
     <h2>Documentos por rol</h2>
     <div class="tbl"><table>
       <thead><tr><th>Documento</th><th>Docente</th><th>Tutor o cotutor</th><th>Revisor</th></tr></thead>
-      <tbody><tr><td>Contrato suscrito por servicios profesionales</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Sílabo</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td><td>—</td></tr><tr><td>Acta de calificaciones</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td><td>—</td></tr><tr><td>Informe de aprobación del trabajo de titulación</td><td>—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td></tr><tr><td>Informe de revisión del trabajo de titulación</td><td>—</td><td>—</td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Acta de defensa</td><td>—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Registro de actividades (bitácora)</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Informe de actividades</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr></tbody>
+      <tbody><tr><td>Documentos del docente</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td><td>—</td></tr><tr><td>Copias del contrato</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Syllabus</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td><td>—</td></tr><tr><td>Información de la asignatura</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td><td>—</td></tr><tr><td>Informe del docente</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td><td>—</td></tr><tr><td>Acta de calificaciones (SGU)</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td><td>—</td></tr><tr><td>Preguntas para examen complexivo</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td><td>—</td></tr><tr><td>Registro fotográfico y enlaces a grabaciones</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td><td>—</td></tr><tr><td>Informe de aprobación del trabajo de titulación</td><td>—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td>—</td></tr><tr><td>Informe de revisión del trabajo de titulación</td><td>—</td><td>—</td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Acta de defensa</td><td>—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Registro de actividades (bitácora)</td><td>—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Informe de actividades</td><td>—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr></tbody>
     </table></div>
     <h2 style="margin-top:32px">Tu checklist</h2>
     <p class="hint">Elige tu rol, haz clic en cada documento para ver el detalle y marca los que ya tienes.</p>
@@ -446,29 +448,57 @@ td.no{color:var(--muted)}
       <button type="button" data-role="revisor">Revisor</button>
     </div>
     <div id="r-docente" class="rolepanel">
-    <ol class="docs num" id="docs5docente">
+    <ol class="docs pad" id="docs5docente">
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
-        <span class="txt">Contrato suscrito por servicios profesionales</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
-        <div class="detail"><p>El contrato firmado que recibes de la Dirección de Posgrado. Ver <a href="#paso1">1. Requisitos para la contratación</a>.</p></div></details></li>
+        <span class="txt">Carátula</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que esté incluido en el paquete.</p></div></details></li>
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
-        <span class="txt">Sílabo</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <span class="txt">Certificación del coordinador</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que esté incluido en el paquete.</p></div></details></li>
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Documentos del docente</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>Los documentos de tu expediente de contratación. Ver <a href="#paso1">1. Requisitos para la contratación</a>.</p></div></details></li>
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Copias del contrato</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>Copias del contrato suscrito por servicios profesionales.</p></div></details></li>
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Syllabus</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El sílabo del módulo, aprobado y firmado antes del inicio. Ver <a href="#paso2">2. Antes de empezar el módulo</a>.</p></div></details></li>
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
-        <span class="txt">Acta de calificaciones</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
-        <div class="detail"><p>El acta del módulo que dictaste.</p></div></details></li>
+        <span class="txt">Información de la asignatura</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>El documento CDyMA de información de asignatura. Ver <a href="#paso2">2. Antes de empezar el módulo</a>.</p></div></details></li>
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
-        <span class="txt">Registro de actividades (bitácora)</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
-        <div class="detail"><p>El registro de las actividades que realizaste, firmado.</p></div></details></li>
+        <span class="txt">Informe del docente</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>El informe del desarrollo de tu módulo.</p><p><span class="pend">Formato: pendiente</span></p></div></details></li>
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
-        <span class="txt">Informe de actividades</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
-        <div class="detail"><p>El informe de las actividades realizadas en el período a pagar.</p></div></details></li>
+        <span class="txt">Informe del coordinador</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que esté incluido en el paquete.</p></div></details></li>
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Acta de calificaciones</span><span class="tag">SGU</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>El acta del módulo que dictaste, que se obtiene del SGU.</p><a class="pill" href="https://sgu.utm.edu.ec/auth/login" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>Ingresar al SGU</a></div></details></li>
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Análisis de encuesta</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que esté incluido en el paquete.</p></div></details></li>
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Preguntas para examen complexivo</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>Las preguntas de tu módulo para el banco del examen complexivo.</p></div></details></li>
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Registro fotográfico y enlaces a grabaciones</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>El registro fotográfico de las sesiones y los enlaces a las grabaciones.</p><p><span class="pend">Formato: pendiente</span></p></div></details></li>
     </ol>
-    <div class="progress"><span data-count="docs5docente">0 de 5 listos</span><div class="bar"><i data-fill="docs5docente"></i></div></div>
+    <div class="progress"><span data-count="docs5docente">0 de 12 listos</span><div class="bar"><i data-fill="docs5docente"></i></div></div>
     </div>
     <div id="r-tutor" class="rolepanel" hidden>
     <ol class="docs num" id="docs5tutor">
