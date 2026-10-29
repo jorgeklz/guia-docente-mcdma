@@ -151,6 +151,7 @@ td.no{color:var(--boxline)}
 .paycard{border:1px solid var(--green);border-radius:14px;padding:16px 18px;margin:36px 0 0}
 .payh{display:flex;align-items:center;gap:8px;margin:0 0 12px;color:var(--green)}
 .paycard h3:first-of-type{margin-top:0}
+.fld{background:var(--green-soft);color:var(--green);border-radius:4px;padding:0 4px;white-space:normal}
 .inv-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
 .inv-h .inv-t{margin:0}
 /* cabecera y navegación por pasos */
@@ -578,9 +579,9 @@ td.no{color:var(--boxline)}
     </div>
     <div class="grid2">
       <div class="invoice" id="inv-d">
-        <div class="inv-h"><span class="inv-t">Docente</span><button class="copy" type="button" data-copy="inv-d" data-text="Servicios de Docente Tutor Maestría en Ciencias de Datos y Máquinas de Aprendizaje cohorte X, paralelo “X”, asignatura: XXXXXX, horas 96, desde el XX XX de 2026 al XX XX de 2026.&#10;Valor sin IVA: US$ XXXX">Copiar</button></div>
-        <p>Servicios de Docente Tutor Maestría en Ciencias de Datos y Máquinas de Aprendizaje cohorte X, paralelo “X”, asignatura: XXXXXX, horas 96, desde el XX XX de 2026 al XX XX de 2026.</p>
-        <p><strong>Valor sin IVA:</strong> US$ XXXX</p>
+        <div class="inv-h"><span class="inv-t">Docente</span><button class="copy" type="button" data-copy="inv-d" data-text="Servicios de Docente Tutor Maestría en Ciencias de Datos y Máquinas de Aprendizaje cohorte [cohorte], paralelo “[paralelo]”, asignatura: [nombre de la asignatura], horas [horas], desde el [día y mes] de 2026 al [día y mes] de 2026.&#10;Valor sin IVA: US$ [valor]">Copiar</button></div>
+        <p>Servicios de Docente Tutor Maestría en Ciencias de Datos y Máquinas de Aprendizaje cohorte <span class="fld">[cohorte]</span>, paralelo “<span class="fld">[paralelo]</span>”, asignatura: <span class="fld">[nombre de la asignatura]</span>, horas <span class="fld">[horas]</span>, desde el <span class="fld">[día y mes]</span> de 2026 al <span class="fld">[día y mes]</span> de 2026.</p>
+        <p><strong>Valor sin IVA:</strong> US$ <span class="fld">[valor]</span></p>
       </div>
       <div class="invoice" id="inv-r">
         <div class="inv-h"><span class="inv-t">Tutor, revisor o miembro del tribunal</span><button class="copy" type="button" data-copy="inv-r" data-text="Servicios profesionales por participar en tutorías, tribunales y revisiones de trabajos de titulación en los programas de cuarto nivel de la Facultad de Posgrado de la UTM.">Copiar</button></div>
