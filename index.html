@@ -133,6 +133,7 @@ th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
 th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500}
 tr:last-child td{border-bottom:0}
 td:first-child{font-weight:500}
+td.num{color:var(--muted);font-variant-numeric:tabular-nums;width:1%;white-space:nowrap}
 .ck{color:var(--check)}
 td.no{color:var(--boxline)}
 @media (prefers-reduced-motion:reduce){.bar i,.chev,details{transition:none}}
@@ -410,7 +411,7 @@ td.no{color:var(--boxline)}
   <!-- PASO 5 -->
   <section id="v-paso5" class="view" hidden>
     <h1>5. Checklist para pagos</h1>
-    <p class="sub"><svg class="i" style="width:16px;height:16px"><use href="#i-clip"/></svg>Documentos según tu rol · docente, tutor o cotutor, revisor</p>
+    <p class="sub"><svg class="i" style="width:16px;height:16px"><use href="#i-clip"/></svg>Documentos según tu rol · docente, tutor o cotutor, revisor, tribunal, tribunal</p>
     <hr>
     <div class="callout">
       <svg class="i"><use href="#i-card"/></svg>
@@ -418,8 +419,8 @@ td.no{color:var(--boxline)}
     </div>
     <h2>Documentos por rol</h2>
     <div class="tbl"><table>
-      <thead><tr><th>Documento</th><th>Docente</th><th>Tutor o cotutor</th><th>Revisor</th></tr></thead>
-      <tbody><tr><td>Documentos del docente</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td></tr><tr><td>Copias del contrato</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Syllabus</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td></tr><tr><td>Información de la asignatura</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td></tr><tr><td>Informe del docente</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td></tr><tr><td>Acta de calificaciones (SGU)</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td></tr><tr><td>Preguntas para examen complexivo</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td></tr><tr><td>Registro fotográfico y enlaces a grabaciones</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td></tr><tr><td>Informe de aprobación del trabajo de titulación</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td></tr><tr><td>Informe de revisión del trabajo de titulación</td><td class="no">—</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Acta de defensa</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Registro de actividades (bitácora)</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td>Informe de actividades</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr></tbody>
+      <thead><tr><th>N.º</th><th>Documento</th><th>Docente</th><th>Tutor o cotutor</th><th>Revisor</th><th>Tribunal</th></tr></thead>
+      <tbody><tr><td class="num">1</td><td>Documentos del docente</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">2</td><td>Copias del contrato</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td class="num">3</td><td>Syllabus</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">4</td><td>Información de la asignatura</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">5</td><td>Informe del docente</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">6</td><td>Acta de calificaciones (SGU)</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">7</td><td>Preguntas para examen complexivo</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">8</td><td>Registro fotográfico y enlaces a grabaciones</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">9</td><td>Informe de aprobación del trabajo de titulación</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">10</td><td>Informe de revisión del trabajo de titulación</td><td class="no">—</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td></tr><tr><td class="num">11</td><td>Acta de defensa</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td class="num">12</td><td>Registro de actividades (bitácora)</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td class="num">13</td><td>Informe de actividades</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr></tbody>
     </table></div>
     <h2 style="margin-top:32px">Tu checklist</h2>
     <p class="hint">Elige tu rol, haz clic en cada documento para ver el detalle y marca los que ya tienes.</p>
@@ -427,6 +428,7 @@ td.no{color:var(--boxline)}
       <button type="button" data-role="docente" class="on">Docente de módulo</button>
       <button type="button" data-role="tutor">Tutor o cotutor</button>
       <button type="button" data-role="revisor">Revisor</button>
+      <button type="button" data-role="tribunal">Tribunal</button>
     </div>
     <div id="r-docente" class="rolepanel">
     <ol class="docs pad" id="docs5docente">
@@ -531,7 +533,27 @@ td.no{color:var(--boxline)}
     </ol>
     <div class="progress"><span data-count="docs5revisor">0 de 5 listos</span><div class="bar"><i data-fill="docs5revisor"></i></div></div>
     </div>
-
+    <div id="r-tribunal" class="rolepanel" hidden>
+    <ol class="docs num" id="docs5tribunal">
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Contrato suscrito por servicios profesionales</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>El contrato firmado que recibes de la Dirección de Posgrado. Ver <a href="#paso1">1. Requisitos para la contratación</a>.</p></div></details></li>
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Acta de defensa</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>El acta firmada al terminar la defensa. Ver <a href="#paso4">4. Flujo de titulación</a>.</p></div></details></li>
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Registro de actividades (bitácora)</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>El registro de las actividades que realizaste, firmado.</p></div></details></li>
+      <li><details><summary>
+        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
+        <span class="txt">Informe de actividades</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
+        <div class="detail"><p>El informe de las actividades realizadas en el período a pagar.</p></div></details></li>
+    </ol>
+    <div class="progress"><span data-count="docs5tribunal">0 de 4 listos</span><div class="bar"><i data-fill="docs5tribunal"></i></div></div>
+    </div>
     <h2 style="margin-top:36px">Procesar el pago</h2>
     <ol class="plain">
       <li>Envía toda la documentación <strong>numerada</strong> a la Dirección de Pagos de Posgrado. <span class="pend">Correo: pendiente</span> <span class="pend">Ejemplo de correo: pendiente</span></li>
