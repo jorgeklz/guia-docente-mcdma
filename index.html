@@ -117,13 +117,15 @@ ol.plain ul{margin:6px 0 0;padding-left:20px}
   .callout{padding:14px}
   .pager{flex-direction:column}
 }
-.tl{list-style:none;margin:0;padding:0}
-.tl li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:16px;position:relative;padding-bottom:18px}
-.tl li:not(:last-child)::before{content:"";position:absolute;left:15px;top:34px;bottom:-2px;width:2px;background:linear-gradient(var(--green),var(--accent));opacity:.45}
-.tl-dot{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:600;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--green-soft)}
-.tl-body{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px;padding-top:3px;min-width:0}
-.tl-t{font-weight:500;font-size:15px;min-width:0}
-.tl-chip{font-size:12.5px;font-weight:500;background:var(--green-soft);color:var(--green);padding:3px 12px;border-radius:999px}
+.tl{list-style:none;margin:0;padding:4px 0 14px;display:flex;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
+.tl li{flex:0 0 196px;position:relative;padding-right:14px;scroll-snap-align:start;min-width:0}
+.tl li:not(:last-child)::before{content:"";position:absolute;left:36px;right:4px;top:15px;height:2px;background:linear-gradient(90deg,var(--green),var(--accent));opacity:.45}
+.tl li:not(:last-child)::after{content:"";position:absolute;right:4px;top:11px;width:8px;height:8px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:rotate(45deg);opacity:.7}
+.tl-dot{position:relative;z-index:1;width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:600;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--green-soft)}
+.tl-body{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:14px;min-width:0}
+.tl-t{font-weight:500;font-size:14px;line-height:1.4}
+.tl-t .ref{display:block;margin-top:2px;white-space:normal}
+.tl-chip{font-size:12.5px;font-weight:500;line-height:1.35;background:var(--green-soft);color:var(--green);padding:4px 12px;border-radius:12px}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tl-dot{color:#06210f}}
 :root[data-theme="dark"] .tl-dot{color:#06210f}
 .stack{display:flex;flex-direction:column;gap:6px}
@@ -418,7 +420,7 @@ td.no{color:var(--muted)}
 </div></details>
     </div>
     <h2 style="margin-top:32px">Plazos clave</h2>
-    <p class="hint">Términos del reglamento, en orden del proceso.</p>
+    <p class="hint">Términos del reglamento, en orden del proceso. Desliza hacia la derecha para ver todas las etapas.</p>
     <ol class="tl"><li><span class="tl-dot">1</span><div class="tl-body"><div class="tl-t">Elegir la opción de titulación<span class="ref"> Art. 60</span></div><span class="tl-chip">Mes 3 al mes 5 del programa</span></div></li><li><span class="tl-dot">2</span><div class="tl-body"><div class="tl-t">Análisis del anteproyecto por el Comité<span class="ref"> Art. 64</span></div><span class="tl-chip">30 días</span></div></li><li><span class="tl-dot">3</span><div class="tl-body"><div class="tl-t">Correcciones del anteproyecto<span class="ref"> Art. 66</span></div><span class="tl-chip">15 días · 20 días si se observa por segunda vez</span></div></li><li><span class="tl-dot">4</span><div class="tl-body"><div class="tl-t">Seguimiento del tutor: alerta por falta de reportes del estudiante<span class="ref"> Art. 100</span></div><span class="tl-chip">30 días: notificación · 45 días: informe</span></div></li><li><span class="tl-dot">5</span><div class="tl-body"><div class="tl-t">Revisión antiplagio<span class="ref"> Art. 70</span></div><span class="tl-chip">5 días para tramitar · 5 días para devolver</span></div></li><li><span class="tl-dot">6</span><div class="tl-body"><div class="tl-t">Certificación del tutor<span class="ref"> Art. 71</span></div><span class="tl-chip">Máximo 5 días</span></div></li><li><span class="tl-dot">7</span><div class="tl-body"><div class="tl-t">Informe del revisor (solo tesis)<span class="ref"> Art. 72</span></div><span class="tl-chip">15 días</span></div></li><li><span class="tl-dot">8</span><div class="tl-body"><div class="tl-t">Cambios tras la predefensa (solo tesis)<span class="ref"> Art. 76</span></div><span class="tl-chip">30 días</span></div></li><li><span class="tl-dot">9</span><div class="tl-body"><div class="tl-t">Aviso al estudiante del examen complexivo<span class="ref"> Art. 92</span></div><span class="tl-chip">Al menos 15 días antes</span></div></li><li><span class="tl-dot">10</span><div class="tl-body"><div class="tl-t">Tiempo para titularse sin arancel<span class="ref"> Art. 97</span></div><span class="tl-chip">Hasta dos períodos académicos adicionales</span></div></li></ol>
     <div class="pager"><a href="#paso3"><svg class="i"><use href="#i-left"/></svg>3. Durante el módulo</a><a href="#paso5">5. Checklist para pagos<svg class="i"><use href="#i-right"/></svg></a></div>
   </section>
