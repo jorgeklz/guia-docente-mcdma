@@ -164,6 +164,16 @@ td.no{color:var(--boxline)}
   .invoice dt{margin-top:8px}
   .pill{max-width:100%;white-space:normal;overflow-wrap:anywhere}
   .callout{gap:10px}
+  /* correcciones tras probar en 375px */
+  summary{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:6px 10px;align-items:start}
+  summary .txt{grid-column:1;grid-row:1;flex:none}
+  summary .chev{grid-column:2;grid-row:1}
+  summary .tag{grid-column:1;grid-row:2;justify-self:start;margin:0}
+  .matrix{table-layout:fixed}
+  .matrix th,.matrix td{padding:8px 3px;overflow-wrap:anywhere}
+  .matrix th{font-size:8.5px;letter-spacing:0}
+  .matrix th:nth-child(1),.matrix td:nth-child(1){width:24px;padding-left:6px;padding-right:0}
+  .matrix th:nth-child(n+3),.matrix td:nth-child(n+3){width:15%;text-align:center}
 }
 </style>
 </head>
@@ -433,7 +443,7 @@ td.no{color:var(--boxline)}
       <p>Aquí tienes el checklist de documentos requeridos según tu rol. Revisa que estén completos y <strong>numerados</strong> antes de enviarlos. Cumplirlo permite que el pago por tus servicios se tramite sin contratiempos.</p>
     </div>
     <h2>Documentos por rol</h2>
-    <div class="tbl"><table>
+    <div class="tbl"><table class="matrix">
       <thead><tr><th>N.º</th><th>Documento</th><th>Docente</th><th>Tutor o cotutor</th><th>Revisor</th><th>Tribunal</th></tr></thead>
       <tbody><tr><td class="num">1</td><td>Documentos del docente</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">2</td><td>Copias del contrato</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">3</td><td>Syllabus</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">4</td><td>Información de la asignatura</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">5</td><td>Informe del docente</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">6</td><td>Acta de calificaciones (SGU)</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">7</td><td>Preguntas para examen complexivo</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">8</td><td>Registro fotográfico y enlaces a grabaciones</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">9</td><td>Acta de predefensa (solo proyecto de investigación)</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td></tr><tr><td class="num">10</td><td>Acta de defensa</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td class="num">11</td><td>Informe de revisión</td><td class="no">—</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td></tr></tbody>
     </table></div>
