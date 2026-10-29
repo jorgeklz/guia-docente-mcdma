@@ -108,6 +108,14 @@ ol.plain ul{margin:6px 0 0;padding-left:20px}
   .pager{flex-direction:column}
 }
 ol.pad .txt::before{content:counter(d,decimal-leading-zero) ". ";color:var(--green)}
+.invoice{border:1px solid var(--line);border-radius:12px;padding:14px 16px;background:var(--tint);min-width:0}
+.invoice p{margin:0 0 6px;font-size:14.5px}
+.invoice p:last-child{margin-bottom:0}
+.inv-t{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
+.invoice dl{margin:0;display:grid;grid-template-columns:max-content minmax(0,1fr);gap:4px 16px;font-size:14.5px}
+.invoice dt{color:var(--muted)}
+.invoice dd{margin:0;overflow-wrap:anywhere}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
 .stack{display:flex;flex-direction:column;gap:6px}
 .stack .stack{margin-top:8px}
 .plain-sum,details>summary>.txt:first-child:last-of-type{}
@@ -168,8 +176,8 @@ td.no{color:var(--boxline)}
   <!-- PASO 1 -->
   <section id="v-paso1" class="view">
     <h1>1. Requisitos para la contratación</h1>
-    <p class="sub"><svg class="i" style="width:16px;height:16px"><use href="#i-clip"/></svg>7 documentos · un único archivo PDF</p>
-    <hr>
+        <hr>
+    <div class="callout"><svg class="i"><use href="#i-clip"/></svg><p><strong>7 documentos · un único archivo PDF</strong></p></div>
     <h2>Documentos a adjuntar</h2>
     <p class="hint">Haz clic en cada documento para ver el detalle.</p>
 
@@ -475,11 +483,31 @@ td.no{color:var(--boxline)}
     </div>
     <h2 style="margin-top:36px">Procesar el pago</h2>
     <ol class="plain">
-      <li>Envía toda la documentación <strong>numerada</strong> a la Dirección de Pagos de Posgrado. <span class="pend">Correo: pendiente</span> <span class="pend">Ejemplo de correo: pendiente</span></li>
+      <li>Carga toda la documentación al drive de la asignatura, dentro de la carpeta «Portafolio docente».</li>
       <li>Respeta la fecha límite de recepción de documentos de cada mes. <span class="pend">Fecha límite: pendiente</span></li>
-      <li>Una vez revisados y verificados los documentos, la Dirección de Posgrado te enviará un correo solicitando los requisitos finales:
-        <ul><li>Factura electrónica.</li><li>Certificado de RUC.</li><li>Certificado de Cumplimiento Tributario.</li></ul></li>
+      <li>Una vez revisados y verificados los documentos, la Facultad de Posgrado solicitará los requisitos finales:
+        <ul><li>Factura electrónica.</li><li>Certificado de RUC.</li></ul></li>
     </ol>
+    <h3 style="margin-top:22px">Detalle de la factura</h3>
+    <div class="invoice">
+      <dl>
+        <dt>Cliente</dt><dd>EMSERVING EP, Empresa Pública de Servicios Generales e Ingeniería UTM</dd>
+        <dt>RUC</dt><dd>1360084120001</dd>
+        <dt>Dirección</dt><dd>Av. Urbina y Che Guevara</dd>
+        <dt>Correo</dt><dd>emserutm@gmail.com</dd>
+      </dl>
+    </div>
+    <div class="grid2">
+      <div class="invoice">
+        <div class="inv-t">Docente</div>
+        <p>Servicios de Docente Tutor Maestría en Ciencias de Datos y Máquinas de Aprendizaje cohorte X, paralelo “X”, asignatura: XXXXXX, horas 96, desde el XX XX de 2026 al XX XX de 2026.</p>
+        <p><strong>Valor sin IVA:</strong> US$ XXXX</p>
+      </div>
+      <div class="invoice">
+        <div class="inv-t">Revisor o miembro del tribunal</div>
+        <p>Servicios profesionales por participar en tutorías, tribunales y revisiones de trabajos de titulación en los programas de cuarto nivel de la Facultad de Posgrado de la UTM.</p>
+      </div>
+    </div>
     <div class="pager"><a href="#paso4"><svg class="i"><use href="#i-left"/></svg>4. Flujo de titulación</a><span class="off">Siguiente: próximamente</span></div>
   </section>
 </div>
