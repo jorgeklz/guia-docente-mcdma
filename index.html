@@ -148,7 +148,7 @@ td.num{color:var(--muted);font-variant-numeric:tabular-nums;width:1%;white-space
 td.no{color:var(--boxline)}
 @media (prefers-reduced-motion:reduce){.bar i,.chev,details{transition:none}}
 .foot{margin-top:36px;padding-top:12px;border-top:1px solid var(--line);text-align:center;font-size:10px;line-height:1.6;color:var(--muted);opacity:.75;overflow-wrap:anywhere}
-.paycard{border:1px solid var(--green);border-radius:14px;padding:16px 18px;margin:0 0 32px}
+.paycard{border:1px solid var(--green);border-radius:14px;padding:16px 18px;margin:36px 0 0}
 .payh{display:flex;align-items:center;gap:8px;margin:0 0 12px;color:var(--green)}
 .paycard h3:first-of-type{margin-top:0}
 .inv-h{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:6px}
@@ -468,39 +468,6 @@ td.no{color:var(--boxline)}
       <svg class="i"><use href="#i-card"/></svg>
       <p>Aquí tienes el checklist de documentos requeridos según tu rol. Revisa que estén completos y <strong>numerados</strong> antes de enviarlos. Cumplirlo permite que el pago por tus servicios se tramite sin contratiempos.</p>
     </div>
-    <div class="paycard" id="pago-sec">
-    <h2 class="payh"><svg class="i"><use href="#i-card"/></svg>Procesar el pago</h2>
-    <h3>Docente</h3>
-    <ol class="plain">
-      <li>Carga toda la documentación al drive de la asignatura, dentro de la carpeta «Portafolio docente».</li>
-      <li>Respeta la fecha límite de recepción de documentos de cada mes. <span class="pend">Fecha límite: pendiente</span></li>
-      <li>Una vez revisados y verificados los documentos, la Facultad de Posgrado solicitará los requisitos finales:
-        <ul><li>Factura electrónica.</li><li>Certificado de RUC.</li></ul></li>
-    </ol>
-    <h3 style="margin-top:18px">Revisores, tutores y tribunales</h3>
-    <p class="plainp">48 horas después de realizada la defensa y aprobación del trabajo de titulación, podrás acudir a las oficinas de la Facultad de Posgrado con tu factura para el cobro de tus haberes.</p>
-    <h3 style="margin-top:22px">Detalle de la factura</h3>
-    <div class="invoice" id="inv-c">
-      <div class="inv-h"><span class="inv-t">Datos del cliente</span><button class="copy" type="button" data-copy="inv-c" data-text="Cliente: EMSERVING EP, Empresa Pública de Servicios Generales e Ingeniería UTM&#10;RUC: 1360084120001&#10;Dirección: Av. Urbina y Che Guevara&#10;Correo: emserutm@gmail.com">Copiar</button></div>
-      <dl>
-        <dt>Cliente</dt><dd>EMSERVING EP, Empresa Pública de Servicios Generales e Ingeniería UTM</dd>
-        <dt>RUC</dt><dd>1360084120001</dd>
-        <dt>Dirección</dt><dd>Av. Urbina y Che Guevara</dd>
-        <dt>Correo</dt><dd>emserutm@gmail.com</dd>
-      </dl>
-    </div>
-    <div class="grid2">
-      <div class="invoice" id="inv-d">
-        <div class="inv-h"><span class="inv-t">Docente</span><button class="copy" type="button" data-copy="inv-d" data-text="Servicios de Docente Tutor Maestría en Ciencias de Datos y Máquinas de Aprendizaje cohorte X, paralelo “X”, asignatura: XXXXXX, horas 96, desde el XX XX de 2026 al XX XX de 2026.&#10;Valor sin IVA: US$ XXXX">Copiar</button></div>
-        <p>Servicios de Docente Tutor Maestría en Ciencias de Datos y Máquinas de Aprendizaje cohorte X, paralelo “X”, asignatura: XXXXXX, horas 96, desde el XX XX de 2026 al XX XX de 2026.</p>
-        <p><strong>Valor sin IVA:</strong> US$ XXXX</p>
-      </div>
-      <div class="invoice" id="inv-r">
-        <div class="inv-h"><span class="inv-t">Revisor o miembro del tribunal</span><button class="copy" type="button" data-copy="inv-r" data-text="Servicios profesionales por participar en tutorías, tribunales y revisiones de trabajos de titulación en los programas de cuarto nivel de la Facultad de Posgrado de la UTM.">Copiar</button></div>
-        <p>Servicios profesionales por participar en tutorías, tribunales y revisiones de trabajos de titulación en los programas de cuarto nivel de la Facultad de Posgrado de la UTM.</p>
-      </div>
-    </div>
-    </div>
     <h2>Documentos por rol</h2>
     <div class="tbl"><table class="matrix">
       <thead><tr><th>N.º</th><th>Documento</th><th>Docente</th><th>Tutor</th><th>Revisor</th><th>Tribunal</th></tr></thead>
@@ -587,6 +554,39 @@ td.no{color:var(--boxline)}
         <span class="txt">Acta de defensa</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El acta firmada al terminar la defensa del trabajo de titulación. Ver <a href="#paso4">4. Proceso de titulación</a>.</p></div></details></li>
     </ol>
+    </div>
+    <div class="paycard" id="pago-sec">
+    <h2 class="payh"><svg class="i"><use href="#i-card"/></svg>Procesar el pago</h2>
+    <h3>Docente</h3>
+    <ol class="plain">
+      <li>Carga toda la documentación al drive de la asignatura, dentro de la carpeta «Portafolio docente».</li>
+      <li>Respeta la fecha límite de recepción de documentos de cada mes. <span class="pend">Fecha límite: pendiente</span></li>
+      <li>Una vez revisados y verificados los documentos, la Facultad de Posgrado solicitará los requisitos finales:
+        <ul><li>Factura electrónica.</li><li>Certificado de RUC.</li></ul></li>
+    </ol>
+    <h3 style="margin-top:18px">Revisores, tutores y tribunales</h3>
+    <p class="plainp">48 horas después de realizada la defensa y aprobación del trabajo de titulación, podrás acudir a las oficinas de la Facultad de Posgrado con tu factura para el cobro de tus haberes.</p>
+    <h3 style="margin-top:22px">Detalle de la factura</h3>
+    <div class="invoice" id="inv-c">
+      <div class="inv-h"><span class="inv-t">Datos del cliente</span><button class="copy" type="button" data-copy="inv-c" data-text="Cliente: EMSERVING EP, Empresa Pública de Servicios Generales e Ingeniería UTM&#10;RUC: 1360084120001&#10;Dirección: Av. Urbina y Che Guevara&#10;Correo: emserutm@gmail.com">Copiar</button></div>
+      <dl>
+        <dt>Cliente</dt><dd>EMSERVING EP, Empresa Pública de Servicios Generales e Ingeniería UTM</dd>
+        <dt>RUC</dt><dd>1360084120001</dd>
+        <dt>Dirección</dt><dd>Av. Urbina y Che Guevara</dd>
+        <dt>Correo</dt><dd>emserutm@gmail.com</dd>
+      </dl>
+    </div>
+    <div class="grid2">
+      <div class="invoice" id="inv-d">
+        <div class="inv-h"><span class="inv-t">Docente</span><button class="copy" type="button" data-copy="inv-d" data-text="Servicios de Docente Tutor Maestría en Ciencias de Datos y Máquinas de Aprendizaje cohorte X, paralelo “X”, asignatura: XXXXXX, horas 96, desde el XX XX de 2026 al XX XX de 2026.&#10;Valor sin IVA: US$ XXXX">Copiar</button></div>
+        <p>Servicios de Docente Tutor Maestría en Ciencias de Datos y Máquinas de Aprendizaje cohorte X, paralelo “X”, asignatura: XXXXXX, horas 96, desde el XX XX de 2026 al XX XX de 2026.</p>
+        <p><strong>Valor sin IVA:</strong> US$ XXXX</p>
+      </div>
+      <div class="invoice" id="inv-r">
+        <div class="inv-h"><span class="inv-t">Revisor o miembro del tribunal</span><button class="copy" type="button" data-copy="inv-r" data-text="Servicios profesionales por participar en tutorías, tribunales y revisiones de trabajos de titulación en los programas de cuarto nivel de la Facultad de Posgrado de la UTM.">Copiar</button></div>
+        <p>Servicios profesionales por participar en tutorías, tribunales y revisiones de trabajos de titulación en los programas de cuarto nivel de la Facultad de Posgrado de la UTM.</p>
+      </div>
+    </div>
     </div>
     <div class="pager"><a href="#paso4"><svg class="i"><use href="#i-left"/></svg>4. Proceso de titulación</a><span class="off">Siguiente: próximamente</span></div>
   </section>
