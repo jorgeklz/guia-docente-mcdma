@@ -9,7 +9,7 @@ Es una página estática de un solo archivo (`index.html`), sin dependencias de 
 1. Requisitos para la contratación
 2. Antes de empezar la asignatura
 3. Durante la asignatura
-4. Flujo de titulación (tesis, artículo de alto nivel y examen complexivo)
+4. Proceso de titulación (proyecto de investigación (tesis), artículo de alto nivel y examen complexivo)
 5. Checklist para pagos
 
 ## Contenido pendiente
