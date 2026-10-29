@@ -5,16 +5,16 @@
 <style>
 /* Layout: páginas tipo Notion (portada verde, ícono, título, desplegables) en columna de 720px; un hash por paso */
 :root{
-  --bg:#ffffff; --fg:#1b2a22; --muted:#66786e; --line:#e3ece7;
+  --bg:#ffffff; --tint:#f5f8f6; --fg:#1b2a22; --muted:#66786e; --line:#e3ece7;
   --green:#00633b; --green-deep:#003f27; --green-soft:#e6f2ec; --accent:#2e9e6a;
   --warn-bg:#fff6e0; --warn-fg:#6b4a00; --cover-a:#003f27; --cover-b:#00633b;
   --font:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0e1612; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --green-soft:#16301f; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --green-soft:#16301f; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0e1612; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --green-soft:#16301f; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --green-soft:#16301f; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -33,7 +33,7 @@ svg.i{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stro
 :root[data-theme="dark"] .tabs a.on{color:#06210f}
 .badge{width:68px;height:68px;border-radius:16px;background:var(--green-soft);color:var(--green);display:grid;place-items:center;margin-top:-34px;position:relative;border:4px solid var(--bg);box-sizing:content-box;margin-left:-4px}
 .badge svg{width:32px;height:32px}
-h1{font-size:clamp(28px,5vw,38px);line-height:1.2;font-weight:600;margin:20px 0 6px;text-wrap:balance}
+h1{font-size:clamp(28px,5vw,38px);line-height:1.2;font-weight:600;margin:28px 0 6px;text-wrap:balance}
 .sub{color:var(--muted);font-size:14px;display:flex;align-items:center;gap:8px;margin:0 0 28px}
 hr{border:0;border-top:1px solid var(--line);margin:0 0 28px}
 
@@ -47,10 +47,10 @@ a{color:var(--green);overflow-wrap:anywhere}
 ol.docs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;counter-reset:d}
 ol.docs>li{counter-increment:d}
 details{border:1px solid var(--line);border-radius:12px;transition:background .15s}
-details[open]{background:var(--green-soft);border-color:transparent}
+details[open]{background:var(--bg);border-color:var(--green)}
 summary{list-style:none;display:flex;gap:14px;align-items:flex-start;padding:12px 14px;cursor:pointer;border-radius:12px}
 summary::-webkit-details-marker{display:none}
-summary:hover{background:var(--green-soft)}
+summary:hover{background:var(--tint)}
 summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .chk{display:grid;margin-top:2px;cursor:pointer}
 .chk input{position:absolute;opacity:0;width:0;height:0}
@@ -73,7 +73,7 @@ details[open] .chev{transform:rotate(90deg)}
 a.pill:hover{border-color:var(--green)}
 .pill svg{width:15px;height:15px}
 .ph{border-style:dashed;color:var(--muted)}
-.key{background:var(--bg);border-left:3px solid var(--green);border-radius:6px;padding:8px 12px;margin:6px 0 8px}
+.key{background:var(--tint);border-left:3px solid var(--green);border-radius:6px;padding:8px 12px;margin:6px 0 8px}
 .warn{display:flex;gap:10px;background:var(--warn-bg);color:var(--warn-fg);border-radius:8px;padding:10px 14px;margin:8px 0}
 .warn svg{margin-top:3px}
 .warn ul{margin:4px 0 0;padding-left:18px}
@@ -99,15 +99,15 @@ td.mut{color:var(--muted);font-size:12.5px;white-space:nowrap}
 .roles button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 ol.plain{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:10px}
 ol.plain ul{margin:6px 0 0;padding-left:20px}
-.cover{min-height:150px;display:flex;align-items:center}
-.cover-in{position:relative;z-index:1;width:100%;max-width:1000px;margin:0 auto;padding:24px max(16px,env(safe-area-inset-right,0px)) 64px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;gap:24px;flex-wrap:nowrap}
-.cover .logo,.cover .logo2{height:76px;width:auto;max-width:none;object-fit:contain;display:block}
-.cover .sep{width:1px;height:56px;background:rgba(255,255,255,.4)}
+.cover{min-height:0;display:block}
+.cover-in{position:relative;z-index:1;width:100%;max-width:1000px;margin:0 auto;padding:28px max(16px,env(safe-area-inset-right,0px)) 28px max(16px,env(safe-area-inset-left,0px));display:flex;align-items:center;justify-content:flex-start;gap:28px;flex-wrap:nowrap}
+.cover .logo,.cover .logo2{height:68px;width:auto;max-width:none;object-fit:contain;display:block}
+.cover .sep{width:1px;height:52px;background:rgba(255,255,255,.4)}
 .pend{color:var(--muted);font-style:italic;font-size:.93em}
 @media (max-width:640px){
-  .cover .logo,.cover .logo2{height:56px}
+  .cover .logo,.cover .logo2{height:48px}
   .cover .sep{display:none}
-    h1{margin-top:16px}
+    h1{margin-top:20px}
   .detail,.detail .detail{padding-left:14px;padding-right:12px}
   summary{flex-wrap:wrap;gap:8px 12px}
   .txt{flex:1 1 60%}
@@ -121,7 +121,6 @@ ol.plain ul{margin:6px 0 0;padding-left:20px}
 .stack .stack{margin-top:8px}
 .plain-sum,details>summary>.txt:first-child:last-of-type{}
 .tag{font-size:11.5px;font-weight:500;padding:2px 10px;border-radius:999px;background:var(--green-soft);color:var(--green);white-space:nowrap;margin-top:3px}
-details[open]>summary>.tag{background:var(--bg)}
 .detail .detail{padding-left:14px}
 details details{background:var(--bg);border-color:var(--line)}
 .detail h3+.pill,.detail h3{margin-top:14px}
@@ -176,7 +175,6 @@ td.no{color:var(--muted)}
 
   <!-- PASO 1 -->
   <section id="v-paso1" class="view">
-    <div class="badge"><svg class="i"><use href="#i-contract"/></svg></div>
     <h1>1. Requisitos para la contratación</h1>
     <p class="sub"><svg class="i" style="width:16px;height:16px"><use href="#i-clip"/></svg>7 documentos · un único archivo PDF</p>
     <hr>
@@ -245,7 +243,6 @@ td.no{color:var(--muted)}
 
   <!-- PASO 2 -->
   <section id="v-paso2" class="view" hidden>
-    <div class="badge"><svg class="i"><use href="#i-book"/></svg></div>
     <h1>2. Antes de empezar el módulo</h1>
     <p class="sub"><svg class="i" style="width:16px;height:16px"><use href="#i-clip"/></svg>2 acciones</p>
     <hr>
@@ -294,7 +291,6 @@ td.no{color:var(--muted)}
 
   <!-- PASO 3 -->
   <section id="v-paso3" class="view" hidden>
-    <div class="badge"><svg class="i"><use href="#i-class"/></svg></div>
     <h1>3. Durante el módulo</h1>
     <p class="sub"><svg class="i" style="width:16px;height:16px"><use href="#i-clip"/></svg>4 responsabilidades del docente</p>
     <hr>
@@ -344,7 +340,6 @@ td.no{color:var(--muted)}
 
   <!-- PASO 4 -->
   <section id="v-paso4" class="view" hidden>
-    <div class="badge"><svg class="i"><use href="#i-cap"/></svg></div>
     <h1>4. Flujo de titulación</h1>
     <p class="sub"><svg class="i" style="width:16px;height:16px"><use href="#i-clip"/></svg>3 modalidades · basado en el Reglamento de Titulación UTM</p>
     <hr>
@@ -477,7 +472,6 @@ td.no{color:var(--muted)}
   </section>
   <!-- PASO 5 -->
   <section id="v-paso5" class="view" hidden>
-    <div class="badge"><svg class="i"><use href="#i-card"/></svg></div>
     <h1>5. Checklist para pagos</h1>
     <p class="sub"><svg class="i" style="width:16px;height:16px"><use href="#i-clip"/></svg>Documentos según tu rol · docente, tutor o cotutor, revisor</p>
     <hr>
