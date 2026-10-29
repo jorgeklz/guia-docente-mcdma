@@ -117,6 +117,15 @@ ol.plain ul{margin:6px 0 0;padding-left:20px}
   .callout{padding:14px}
   .pager{flex-direction:column}
 }
+.tl{list-style:none;margin:0;padding:0}
+.tl li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:16px;position:relative;padding-bottom:18px}
+.tl li:not(:last-child)::before{content:"";position:absolute;left:15px;top:34px;bottom:-2px;width:2px;background:linear-gradient(var(--green),var(--accent));opacity:.45}
+.tl-dot{width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:600;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--green-soft)}
+.tl-body{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:6px 16px;padding-top:3px;min-width:0}
+.tl-t{font-weight:500;font-size:15px;min-width:0}
+.tl-chip{font-size:12.5px;font-weight:500;background:var(--green-soft);color:var(--green);padding:3px 12px;border-radius:999px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tl-dot{color:#06210f}}
+:root[data-theme="dark"] .tl-dot{color:#06210f}
 .stack{display:flex;flex-direction:column;gap:6px}
 .stack .stack{margin-top:8px}
 .plain-sum,details>summary>.txt:first-child:last-of-type{}
@@ -346,13 +355,6 @@ td.no{color:var(--muted)}
     <div class="stack">
 <details><summary><span class="txt">4.1 Tutor o cotutor</span><span class="tag">Todas las modalidades</span><svg class="i chev"><use href="#i-chev"/></svg></summary><div class="detail">
 <p>Una vez designado por el H. Consejo Directivo de la Facultad de Posgrado, guías al estudiante hasta que culmine su opción de titulación, dentro de los plazos del reglamento. <span class="ref">Art. 55</span></p>
-<h3>Perfil</h3>
-<ul>
-<li>Personal académico titular u ocasional de la Facultad.</li>
-<li>Título de doctor (PhD o equivalente) o magíster, relacionado con el área del tema.</li>
-<li>Experiencia acreditada en docencia e investigación.</li>
-<li>Sin parentesco con el estudiante hasta el primer grado de consanguinidad o afinidad.</li>
-</ul>
 <h3>Funciones <span class="ref">Art. 56</span></h3>
 <ul>
 <li>Orientar y apoyar al estudiante para precisar y desarrollar el tema.</li>
@@ -384,8 +386,6 @@ td.no{color:var(--muted)}
 <details><summary><span class="txt">4.2 Revisor</span><span class="tag">Solo tesis</span><svg class="i chev"><use href="#i-chev"/></svg></summary><div class="detail">
 <div class="warn"><svg class="i"><use href="#i-alert"/></svg><span><strong>Solo en la modalidad tesis.</strong> El artículo de alto nivel y el examen complexivo no tienen revisor.</span></div>
 <p>El Comité del programa sugiere a la Comisión de Titulación un revisor entre los especialistas con mayor dominio del tema. <span class="ref">Art. 72</span></p>
-<h3>Perfil</h3>
-<ul><li>Profesor con título de doctor o magíster, o equivalente.</li><li>Experiencia docente o investigativa en el área del conocimiento o en metodología de la investigación científica.</li></ul>
 <h3>Qué debes hacer</h3>
 <ol>
 <li>Revisar de forma detallada el informe final del trabajo de titulación, considerando la metodología de investigación establecida.</li>
@@ -416,43 +416,10 @@ td.no{color:var(--muted)}
 </div></details>
 </div>
 </div></details>
-<details><summary><span class="txt">4.4 Qué cambia según la modalidad</span><svg class="i chev"><use href="#i-chev"/></svg></summary><div class="detail">
-<div class="stack">
-<details><summary><span class="txt">Tesis</span><svg class="i chev"><use href="#i-chev"/></svg></summary><div class="detail">
-<ul>
-<li>Actores: tutor, cotutor si aplica, revisor y tribunal.</li>
-<li>Tiene <strong>predefensa pública</strong> y luego <strong>defensa pública</strong>. <span class="ref">Arts. 75 y 76</span></li>
-<li>Tras la predefensa, el estudiante tiene 30 días para hacer las modificaciones según las observaciones del revisor y del tribunal.</li>
-<li>El informe escrito tiene tres partes: preliminar, cuerpo (introducción, tres capítulos, conclusiones y recomendaciones) y referencial. <span class="ref">Art. 69</span></li>
-</ul>
-</div></details>
-<details><summary><span class="txt">Artículo de alto nivel</span><svg class="i chev"><use href="#i-chev"/></svg></summary><div class="detail">
-<ul>
-<li>Actores: tutor, cotutor si aplica y tribunal. No tiene revisor.</li>
-<li>El artículo debe someterse a revisión de pares y publicarse en una revista científica indexada.</li>
-<li>Para solicitar la defensa, el estudiante presenta la certificación de aceptación o de publicación firmada por el editor de la revista, o el artículo ya publicado. <span class="ref">Art. 73</span></li>
-<li>En la filiación, el primer autor es el estudiante, seguido del tutor y del cotutor si lo hay, según lo aprobado por el H. Consejo Directivo. Los casos excepcionales deben estar justificados.</li>
-</ul>
-</div></details>
-<details><summary><span class="txt">Examen complexivo</span><svg class="i chev"><use href="#i-chev"/></svg></summary><div class="detail">
-<ul>
-<li>Actores: tutor, cotutor si aplica y tribunal evaluador. No tiene revisor. <span class="ref">Art. 92</span></li>
-<li>Consta de dos fases: <strong>teórica</strong> (prueba escrita) y <strong>práctica</strong> (informe escrito y exposición). <span class="ref">Art. 87</span></li>
-<li>La prueba teórica sale del banco de preguntas del programa, aprobado por la Comisión de Titulación, y abarca al menos cuatro áreas del conocimiento relevantes del programa. <span class="ref">Arts. 88 y 91</span></li>
-<li>El informe de la fase práctica puede ser un estudio de caso, una experiencia de avanzada, un estudio diagnóstico o una propuesta y su aplicación. Incluye una declaración escrita de autoría. <span class="ref">Arts. 89 y 91</span></li>
-<li>Se notifica al estudiante con al menos 15 días de anticipación. Las dos fases se rinden el mismo día, con un máximo de 4 horas entre ellas.</li>
-<li>Se convoca al tribunal evaluador, al tutor y al coordinador del programa. Al final se firma el acta: miembros del tribunal y secretario asesor jurídico.</li>
-</ul>
-</div></details>
-</div>
-</div></details>
     </div>
     <h2 style="margin-top:32px">Plazos clave</h2>
-    <p class="hint">Términos del reglamento, en días.</p>
-    <div class="tbl"><table>
-      <thead><tr><th>Etapa</th><th>Plazo</th><th>Referencia</th></tr></thead>
-      <tbody><tr><td>Elegir la opción de titulación</td><td>Entre el mes 3 y el mes 5 del programa</td><td class="mut">Art. 60</td></tr><tr><td>Análisis del anteproyecto por el Comité</td><td>30 días</td><td class="mut">Art. 64</td></tr><tr><td>Correcciones del anteproyecto</td><td>15 días; 20 días si se observa por segunda vez</td><td class="mut">Art. 66</td></tr><tr><td>Revisión antiplagio</td><td>5 días para tramitar y 5 para devolver</td><td class="mut">Art. 70</td></tr><tr><td>Certificación del tutor</td><td>Máximo 5 días</td><td class="mut">Art. 71</td></tr><tr><td>Informe del revisor</td><td>15 días</td><td class="mut">Art. 72</td></tr><tr><td>Cambios tras la predefensa</td><td>30 días</td><td class="mut">Art. 76</td></tr><tr><td>Aviso al estudiante del examen complexivo</td><td>Al menos 15 días antes</td><td class="mut">Art. 92</td></tr><tr><td>Alerta por falta de reportes del estudiante</td><td>30 días: notificación; 45 días: informe</td><td class="mut">Art. 100</td></tr><tr><td>Tiempo para titularse sin arancel</td><td>Hasta dos períodos académicos adicionales</td><td class="mut">Art. 97</td></tr></tbody>
-    </table></div>
+    <p class="hint">Términos del reglamento, en orden del proceso.</p>
+    <ol class="tl"><li><span class="tl-dot">1</span><div class="tl-body"><div class="tl-t">Elegir la opción de titulación<span class="ref"> Art. 60</span></div><span class="tl-chip">Mes 3 al mes 5 del programa</span></div></li><li><span class="tl-dot">2</span><div class="tl-body"><div class="tl-t">Análisis del anteproyecto por el Comité<span class="ref"> Art. 64</span></div><span class="tl-chip">30 días</span></div></li><li><span class="tl-dot">3</span><div class="tl-body"><div class="tl-t">Correcciones del anteproyecto<span class="ref"> Art. 66</span></div><span class="tl-chip">15 días · 20 días si se observa por segunda vez</span></div></li><li><span class="tl-dot">4</span><div class="tl-body"><div class="tl-t">Seguimiento del tutor: alerta por falta de reportes del estudiante<span class="ref"> Art. 100</span></div><span class="tl-chip">30 días: notificación · 45 días: informe</span></div></li><li><span class="tl-dot">5</span><div class="tl-body"><div class="tl-t">Revisión antiplagio<span class="ref"> Art. 70</span></div><span class="tl-chip">5 días para tramitar · 5 días para devolver</span></div></li><li><span class="tl-dot">6</span><div class="tl-body"><div class="tl-t">Certificación del tutor<span class="ref"> Art. 71</span></div><span class="tl-chip">Máximo 5 días</span></div></li><li><span class="tl-dot">7</span><div class="tl-body"><div class="tl-t">Informe del revisor (solo tesis)<span class="ref"> Art. 72</span></div><span class="tl-chip">15 días</span></div></li><li><span class="tl-dot">8</span><div class="tl-body"><div class="tl-t">Cambios tras la predefensa (solo tesis)<span class="ref"> Art. 76</span></div><span class="tl-chip">30 días</span></div></li><li><span class="tl-dot">9</span><div class="tl-body"><div class="tl-t">Aviso al estudiante del examen complexivo<span class="ref"> Art. 92</span></div><span class="tl-chip">Al menos 15 días antes</span></div></li><li><span class="tl-dot">10</span><div class="tl-body"><div class="tl-t">Tiempo para titularse sin arancel<span class="ref"> Art. 97</span></div><span class="tl-chip">Hasta dos períodos académicos adicionales</span></div></li></ol>
     <div class="pager"><a href="#paso3"><svg class="i"><use href="#i-left"/></svg>3. Durante el módulo</a><a href="#paso5">5. Checklist para pagos<svg class="i"><use href="#i-right"/></svg></a></div>
   </section>
   <!-- PASO 5 -->
