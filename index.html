@@ -147,6 +147,8 @@ td.num{color:var(--muted);font-variant-numeric:tabular-nums;width:1%;white-space
 .ck{color:var(--check)}
 td.no{color:var(--boxline)}
 @media (prefers-reduced-motion:reduce){.bar i,.chev,details{transition:none}}
+.foot{margin-top:40px;padding-top:16px;border-top:1px solid var(--line);display:flex;flex-direction:column;align-items:center;gap:2px;text-align:center;font-size:11px;color:var(--muted)}
+.foot strong{color:var(--fg);font-weight:600}
 /* cabecera y navegación por pasos */
 .cover{min-height:0;display:block}
 .cover-in{display:block;padding:20px max(16px,env(safe-area-inset-right,0px)) 14px max(16px,env(safe-area-inset-left,0px))}
@@ -455,7 +457,7 @@ td.no{color:var(--boxline)}
   <!-- PASO 5 -->
   <section id="v-paso5" class="view" hidden>
     <h1>5. Checklist para pagos</h1>
-    <p class="sub"><svg class="i" style="width:16px;height:16px"><use href="#i-clip"/></svg>Documentos según tu rol · docente, tutor o cotutor, revisor, tribunal, tribunal</p>
+    <p class="sub"><svg class="i" style="width:16px;height:16px"><use href="#i-clip"/></svg>Documentos según tu rol · docente, tutor, revisor y tribunal</p>
     <hr>
     <div class="callout">
       <svg class="i"><use href="#i-card"/></svg>
@@ -463,14 +465,14 @@ td.no{color:var(--boxline)}
     </div>
     <h2>Documentos por rol</h2>
     <div class="tbl"><table class="matrix">
-      <thead><tr><th>N.º</th><th>Documento</th><th>Docente</th><th>Tutor o cotutor</th><th>Revisor</th><th>Tribunal</th></tr></thead>
+      <thead><tr><th>N.º</th><th>Documento</th><th>Docente</th><th>Tutor</th><th>Revisor</th><th>Tribunal</th></tr></thead>
       <tbody><tr><td class="num">1</td><td>Documentos del docente</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">2</td><td>Copias del contrato</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">3</td><td>Syllabus</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">4</td><td>Información de la asignatura</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">5</td><td>Informe del docente</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">6</td><td>Acta de calificaciones (SGU)</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">7</td><td>Preguntas para examen complexivo</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">8</td><td>Registro fotográfico y enlaces a grabaciones</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td><td class="no">—</td><td class="no">—</td></tr><tr><td class="num">9</td><td>Acta de predefensa (solo proyecto de investigación)</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td></tr><tr><td class="num">10</td><td>Acta de defensa</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td><td><svg class="i ck"><use href="#i-check"/></svg></td></tr><tr><td class="num">11</td><td>Informe de revisión</td><td class="no">—</td><td class="no">—</td><td><svg class="i ck"><use href="#i-check"/></svg></td><td class="no">—</td></tr></tbody>
     </table></div>
     <h2 style="margin-top:32px">Tu checklist</h2>
     <p class="hint">Elige tu rol y haz clic en cada documento para ver el detalle.</p>
     <div class="roles" role="group" aria-label="Rol">
       <button type="button" data-role="docente" class="on">Docente de asignatura</button>
-      <button type="button" data-role="tutor">Tutor o cotutor</button>
+      <button type="button" data-role="tutor">Tutor</button>
       <button type="button" data-role="revisor">Revisor</button>
       <button type="button" data-role="tribunal">Tribunal</button>
     </div>
@@ -580,6 +582,7 @@ td.no{color:var(--boxline)}
     </div>
     <div class="pager"><a href="#paso4"><svg class="i"><use href="#i-left"/></svg>4. Flujo de titulación</a><span class="off">Siguiente: próximamente</span></div>
   </section>
+  <footer class="foot"><strong>Jorge Párraga Álava, Ph.D.</strong><span>Coordinador</span></footer>
 </div>
 <nav class="botnav" aria-label="Pasos de la guía (inferior)"><div class="botnav-in"><a href="#paso1" data-tab="paso1"><span class="n">1</span><span class="ll">Requisitos</span><span class="ls">Requisitos</span></a><a href="#paso2" data-tab="paso2"><span class="n">2</span><span class="ll">Antes de la asignatura</span><span class="ls">Antes</span></a><a href="#paso3" data-tab="paso3"><span class="n">3</span><span class="ll">Durante la asignatura</span><span class="ls">Durante</span></a><a href="#paso4" data-tab="paso4"><span class="n">4</span><span class="ll">Flujo de titulación</span><span class="ls">Titulación</span></a><a href="#paso5" data-tab="paso5"><span class="n">5</span><span class="ll">Checklist para pagos</span><span class="ls">Pagos</span></a></div></nav>
 
