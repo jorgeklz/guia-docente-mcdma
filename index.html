@@ -52,22 +52,13 @@ summary{list-style:none;display:flex;gap:14px;align-items:flex-start;padding:12p
 summary::-webkit-details-marker{display:none}
 summary:hover{background:var(--tint)}
 summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-.chk{display:grid;margin-top:2px;cursor:pointer}
-.chk input{position:absolute;opacity:0;width:0;height:0}
-.box{width:22px;height:22px;border:1.6px solid var(--muted);border-radius:6px;display:grid;place-items:center;color:transparent;background:var(--bg)}
-.box svg{width:14px;height:14px;stroke-width:2.4}
-.chk input:checked+.box{background:var(--check);border-color:var(--check);color:#fff}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chk input:checked+.box{color:#06210f}}
-:root[data-theme="dark"] .chk input:checked+.box{color:#06210f}
-.chk input:focus-visible+.box{outline:2px solid var(--accent);outline-offset:2px}
 .txt{flex:1;min-width:0;font-weight:500}
 ol.num .txt::before{content:counter(d) ". ";color:var(--green)}
 ol.alpha .txt::before{content:counter(d,lower-alpha) ") ";color:var(--green)}
 ol.alpha{counter-reset:d}
-li:has(input:checked) .txt{color:var(--muted)}
 .chev{color:var(--muted);margin-top:2px;transition:transform .2s}
 details[open] .chev{transform:rotate(90deg)}
-.detail{padding:0 14px 16px 50px;font-size:14.5px}
+.detail{padding:0 14px 16px 14px;font-size:14.5px}
 .detail p{margin:0 0 8px}
 .detail ul,.detail ol{margin:0 0 8px;padding-left:20px}
 .detail li{margin-bottom:4px}
@@ -84,9 +75,6 @@ a.pill:hover{border-color:var(--green)}
 .tip p{margin:0}
 h3{font-size:14px;font-weight:600;margin:14px 0 6px}
 
-.progress{display:flex;align-items:center;gap:12px;margin:18px 0 0;font-size:13px;color:var(--muted)}
-.bar{flex:1;height:6px;border-radius:99px;background:var(--line);overflow:hidden}
-.bar i{display:block;height:100%;width:0;background:var(--green);transition:width .25s}
 .pager{display:flex;justify-content:space-between;gap:12px;margin-top:48px;padding-top:20px;border-top:1px solid var(--line);font-size:13px}
 .pager a{text-decoration:none;display:inline-flex;align-items:center;gap:6px}
 .pager .off{color:var(--muted)}
@@ -113,7 +101,7 @@ ol.plain ul{margin:6px 0 0;padding-left:20px}
   .detail,.detail .detail{padding-left:14px;padding-right:12px}
   summary{flex-wrap:wrap;gap:8px 12px}
   .txt{flex:1 1 60%}
-  .tag{order:3;margin-left:36px}
+  .tag{order:3}
   .tabs{flex-wrap:nowrap;overflow-x:auto;padding-bottom:4px;margin-right:calc(-1*max(16px,env(safe-area-inset-right,0px)))}
   .tabs a{white-space:nowrap}
   .callout{padding:14px}
@@ -187,33 +175,28 @@ td.no{color:var(--boxline)}
 
     <ol class="docs num" id="docs1">
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Hoja de vida actualizada.</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <p>Puede presentarse en <strong>cualquier formato</strong>.</p>
           <ul><li>Debe estar actualizada a la fecha.</li><li>Incluye tu formación, experiencia docente y datos de contacto.</li></ul>
         </div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Copia de cédula y certificado de votación.</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <ul><li>Cédula de ciudadanía por ambos lados.</li><li>Certificado de votación vigente.</li></ul>
         </div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Copia de títulos de tercer y cuarto nivel.</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <ul><li>Título de tercer nivel (grado).</li><li>Título de cuarto nivel (maestría o doctorado).</li></ul>
         </div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Certificado de títulos del MINEDUC (Ex Senescyt) actualizado del año en curso.</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <p>Debe corresponder al <strong>año en curso</strong>; un certificado de años anteriores no es válido.</p>
           <a class="pill" href="https://titulos-edusuperior.minedec.gob.ec/consulta-titulos-web/faces/vista/consulta/consulta.xhtml" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>Consulta de títulos del MINEDUC</a>
         </div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Certificado de RUC actualizado del año en curso.</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <p>La actividad económica registrada debe ser:</p>
@@ -222,20 +205,17 @@ td.no{color:var(--boxline)}
           <a class="pill" href="https://www.sri.gob.ec" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>Portal del SRI</a>
         </div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Certificado bancario actualizado del año en curso.</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <p>Solicítalo a tu entidad bancaria. Debe ser del <strong>año en curso</strong> y corresponder a una cuenta a tu nombre, donde se acreditarán los pagos.</p>
         </div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Certificado de no tener impedimento legal para ejercer cargo público.</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <p>Se genera en línea en el portal del Ministerio del Trabajo:</p>
           <a class="pill" href="https://calculadoras.trabajo.gob.ec/impedimento" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>calculadoras.trabajo.gob.ec/impedimento</a>
         </div></details></li>
     </ol>
-    <div class="progress"><span data-count="docs1">0 de 7 listos</span><div class="bar"><i data-fill="docs1"></i></div></div>
     <div class="pager"><span class="off">Paso 1</span><a href="#paso2">2. Antes de la asignatura<svg class="i"><use href="#i-right"/></svg></a></div>
   </section>
 
@@ -253,7 +233,6 @@ td.no{color:var(--boxline)}
 
     <ol class="docs alpha" id="docs2">
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Documentos a entregar antes de iniciar clases</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <ol>
@@ -267,7 +246,6 @@ td.no{color:var(--boxline)}
         </div></details></li>
 
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Plataformas de posgrado</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <ol>
@@ -278,7 +256,6 @@ td.no{color:var(--boxline)}
         </div></details></li>
 
     </ol>
-    <div class="progress"><span data-count="docs2">0 de 2 listos</span><div class="bar"><i data-fill="docs2"></i></div></div>
     <div class="pager"><a href="#paso1"><svg class="i"><use href="#i-left"/></svg>1. Requisitos</a><a href="#paso3">3. Durante la asignatura<svg class="i"><use href="#i-right"/></svg></a></div>
   </section>
 
@@ -296,7 +273,6 @@ td.no{color:var(--boxline)}
 
     <ol class="docs num" id="docs3">
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Puntualidad y grabación</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <div class="tip"><svg class="i"><use href="#i-clock"/></svg><p>Antes de cada clase, ingresa a la sesión los lunes y jueves al menos 15 minutos antes de las 19h00.</p></div>
@@ -304,20 +280,17 @@ td.no{color:var(--boxline)}
           <div class="tip"><svg class="i"><use href="#i-video"/></svg><p>Eres <strong>responsable de grabar cada clase</strong>. Graba toda la sesión sincrónica, desde su inicio, y guarda la grabación dentro del mismo Drive de la asignatura.</p></div>
         </div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Inicia la sesión sincrónica</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <p>Usa la libertad de cátedra para manejar la sesión sincrónica de acuerdo a la metodología de enseñanza que elijas y en apego al sílabo aprobado por tu coordinador.</p>
           <div class="tip"><svg class="i"><use href="#i-bulb"/></svg><p>Interactúa con los estudiantes usando herramientas digitales para fomentar la participación.</p></div>
         </div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Termina la grabación</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail">
           <p>No olvides detener la grabación al finalizar la sesión sincrónica. Después, sube el archivo a la carpeta del Drive de la asignatura.</p>
         </div></details></li>
     </ol>
-    <div class="progress"><span data-count="docs3">0 de 3 listos</span><div class="bar"><i data-fill="docs3"></i></div></div>
     <div class="pager"><a href="#paso2"><svg class="i"><use href="#i-left"/></svg>2. Antes de la asignatura</a><a href="#paso4">4. Flujo de titulación<svg class="i"><use href="#i-right"/></svg></a></div>
   </section>
 
@@ -433,126 +406,96 @@ td.no{color:var(--boxline)}
     <div id="r-docente" class="rolepanel">
     <ol class="docs pad" id="docs5docente">
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Carátula</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que se encuentre cargado en el drive de la asignatura.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Certificación del coordinador</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que se encuentre cargado en el drive de la asignatura.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Documentos del docente</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>Los documentos de tu expediente de contratación. Ver <a href="#paso1">1. Requisitos para la contratación</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Copias del contrato</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>Copias del contrato suscrito por servicios profesionales.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Syllabus</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El sílabo de la asignatura, aprobado y firmado antes del inicio. Ver <a href="#paso2">2. Antes de empezar la asignatura</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Información de la asignatura</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El documento CDyMA de información de asignatura. Ver <a href="#paso2">2. Antes de empezar la asignatura</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Informe del docente</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El informe del desarrollo de tu asignatura.</p><p><span class="pend">Formato: pendiente</span></p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Informe del coordinador</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que se encuentre cargado en el drive de la asignatura.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Acta de calificaciones</span><span class="tag">SGU</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El acta de la asignatura que dictaste, que se obtiene del SGU.</p><a class="pill" href="https://sgu.utm.edu.ec/auth/login" target="_blank" rel="noopener"><svg class="i"><use href="#i-ext"/></svg>Ingresar al SGU</a></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Análisis de encuesta</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que se encuentre cargado en el drive de la asignatura.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Preguntas para examen complexivo</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>Las preguntas de tu asignatura para el banco del examen complexivo.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Registro fotográfico y enlaces a grabaciones</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El registro fotográfico de las sesiones y los enlaces a las grabaciones.</p><p><span class="pend">Formato: pendiente</span></p></div></details></li>
     </ol>
-    <div class="progress"><span data-count="docs5docente">0 de 12 listos</span><div class="bar"><i data-fill="docs5docente"></i></div></div>
     </div>
     <div id="r-tutor" class="rolepanel" hidden>
     <ol class="docs num" id="docs5tutor">
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Contrato suscrito por servicios profesionales</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El contrato firmado que recibes de la Dirección de Posgrado. Ver <a href="#paso1">1. Requisitos para la contratación</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Informe de aprobación del trabajo de titulación</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>Lo emites como tutor o cotutor al aprobar el trabajo. Ver <a href="#paso4">4. Flujo de titulación</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Acta de defensa</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El acta firmada al terminar la defensa. Ver <a href="#paso4">4. Flujo de titulación</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Registro de actividades (bitácora)</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El registro de las actividades que realizaste, firmado.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Informe de actividades</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El informe de las actividades realizadas en el período a pagar.</p></div></details></li>
     </ol>
-    <div class="progress"><span data-count="docs5tutor">0 de 5 listos</span><div class="bar"><i data-fill="docs5tutor"></i></div></div>
     </div>
     <div id="r-revisor" class="rolepanel" hidden>
     <ol class="docs num" id="docs5revisor">
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Contrato suscrito por servicios profesionales</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El contrato firmado que recibes de la Dirección de Posgrado. Ver <a href="#paso1">1. Requisitos para la contratación</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Informe de revisión del trabajo de titulación</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>Lo emites como revisor del proyecto de investigación (tesis). Ver <a href="#paso4">4. Flujo de titulación</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Acta de defensa</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El acta firmada al terminar la defensa. Ver <a href="#paso4">4. Flujo de titulación</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Registro de actividades (bitácora)</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El registro de las actividades que realizaste, firmado.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Informe de actividades</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El informe de las actividades realizadas en el período a pagar.</p></div></details></li>
     </ol>
-    <div class="progress"><span data-count="docs5revisor">0 de 5 listos</span><div class="bar"><i data-fill="docs5revisor"></i></div></div>
     </div>
     <div id="r-tribunal" class="rolepanel" hidden>
     <ol class="docs num" id="docs5tribunal">
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Contrato suscrito por servicios profesionales</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El contrato firmado que recibes de la Dirección de Posgrado. Ver <a href="#paso1">1. Requisitos para la contratación</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Acta de defensa</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El acta firmada al terminar la defensa. Ver <a href="#paso4">4. Flujo de titulación</a>.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Registro de actividades (bitácora)</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El registro de las actividades que realizaste, firmado.</p></div></details></li>
       <li><details><summary>
-        <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Informe de actividades</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El informe de las actividades realizadas en el período a pagar.</p></div></details></li>
     </ol>
-    <div class="progress"><span data-count="docs5tribunal">0 de 4 listos</span><div class="bar"><i data-fill="docs5tribunal"></i></div></div>
     </div>
     <h2 style="margin-top:36px">Procesar el pago</h2>
     <ol class="plain">
@@ -575,20 +518,6 @@ function route(){
 }
 addEventListener('hashchange',route);route();
 
-document.querySelectorAll('ol.docs').forEach(ol=>{
-  const id=ol.id,key='mcdml-'+id,boxes=[...ol.querySelectorAll('input')];
-  const count=document.querySelector('[data-count="'+id+'"]'),fill=document.querySelector('[data-fill="'+id+'"]');
-  const paint=()=>{const n=boxes.filter(b=>b.checked).length;
-    count.textContent=n+' de '+boxes.length+' listos';fill.style.width=(n/boxes.length*100)+'%'};
-  try{const s=JSON.parse(localStorage.getItem(key)||'[]');boxes.forEach((b,i)=>b.checked=!!s[i])}catch(_){}
-  boxes.forEach(b=>{
-    const l=b.closest('.chk');
-    l.addEventListener('click',e=>{e.stopPropagation();e.preventDefault();
-      b.checked=!b.checked;paint();
-      try{localStorage.setItem(key,JSON.stringify(boxes.map(x=>x.checked)))}catch(_){}});
-  });
-  paint();
-});
 document.querySelectorAll('.roles button').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.roles button').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('.rolepanel').forEach(p=>p.hidden=p.id!=='r-'+b.dataset.role);
