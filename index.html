@@ -116,6 +116,14 @@ ol.pad .txt::before{content:counter(d,decimal-leading-zero) ". ";color:var(--gre
 .invoice dt{color:var(--muted)}
 .invoice dd{margin:0;overflow-wrap:anywhere}
 .grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px;margin-top:12px}
+.rolenote{margin:0 0 12px;font-size:14.5px}
+.plainp{margin:0;font-size:15px}
+.mailrow{display:flex;flex-wrap:wrap;align-items:center;gap:6px 10px;margin-top:4px}
+.mailrow strong{overflow-wrap:anywhere}
+.copy{font:inherit;font-size:12.5px;border:1px solid var(--line);background:var(--bg);color:var(--green);border-radius:8px;padding:2px 12px;cursor:pointer}
+.copy:hover{border-color:var(--green)}
+.copy:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.callout>div{min-width:0}
 .stack{display:flex;flex-direction:column;gap:6px}
 .stack .stack{margin-top:8px}
 .plain-sum,details>summary>.txt:first-child:last-of-type{}
@@ -177,7 +185,8 @@ td.no{color:var(--boxline)}
   <section id="v-paso1" class="view">
     <h1>1. Requisitos para la contratación</h1>
         <hr>
-    <div class="callout"><svg class="i"><use href="#i-clip"/></svg><p><strong>7 documentos · un único archivo PDF</strong></p></div>
+    <div class="callout"><svg class="i"><use href="#i-clip"/></svg><div><p><strong>7 documentos · un único archivo PDF</strong></p>
+      <p class="mailrow">Remite el PDF con la documentación al correo <strong id="mail1">m.cienciasdatos@utm.edu.ec</strong> <button class="copy" type="button" data-copy="mail1">Copiar</button></p></div></div>
     <h2>Documentos a adjuntar</h2>
     <p class="hint">Haz clic en cada documento para ver el detalle.</p>
 
@@ -309,7 +318,7 @@ td.no{color:var(--boxline)}
     <hr>
     <div class="callout">
       <svg class="i"><use href="#i-cap"/></svg>
-      <p>La maestría ofrece tres modalidades de titulación: proyecto de investigación (tesis), artículo de alto nivel y examen complexivo. Según la modalidad, intervienen distintos actores. La opción se desarrolla de forma individual.</p>
+      <p>La maestría ofrece tres modalidades de titulación: proyecto de investigación (tesis), artículo de alto nivel y examen complexivo.</p>
     </div>
     <h2>Quién interviene en cada modalidad</h2>
     <div class="tbl"><table>
@@ -412,6 +421,7 @@ td.no{color:var(--boxline)}
       <button type="button" data-role="tribunal">Tribunal</button>
     </div>
     <div id="r-docente" class="rolepanel">
+    <div class="key rolenote">Para el docente, la información debe cargarse en el drive de la asignatura, en la carpeta «Portafolio docente».</div>
     <ol class="docs pad" id="docs5docente">
       <li><details><summary>
         <span class="txt">Carátula</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
@@ -452,6 +462,7 @@ td.no{color:var(--boxline)}
     </ol>
     </div>
     <div id="r-tutor" class="rolepanel" hidden>
+    <div class="key rolenote">48 horas después de realizada la defensa y aprobación del trabajo de titulación, podrás acudir a las oficinas de la Facultad de Posgrado con tu factura para el cobro de tus haberes.</div>
     <ol class="docs num">
       <li><details><summary>
         <span class="txt">Acta de predefensa</span><span class="tag">Solo proyecto de investigación</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
@@ -462,6 +473,7 @@ td.no{color:var(--boxline)}
     </ol>
     </div>
     <div id="r-revisor" class="rolepanel" hidden>
+    <div class="key rolenote">48 horas después de realizada la defensa y aprobación del trabajo de titulación, podrás acudir a las oficinas de la Facultad de Posgrado con tu factura para el cobro de tus haberes.</div>
     <ol class="docs num">
       <li><details><summary>
         <span class="txt">Acta de predefensa</span><span class="tag">Solo proyecto de investigación</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
@@ -475,6 +487,7 @@ td.no{color:var(--boxline)}
     </ol>
     </div>
     <div id="r-tribunal" class="rolepanel" hidden>
+    <div class="key rolenote">48 horas después de realizada la defensa y aprobación del trabajo de titulación, podrás acudir a las oficinas de la Facultad de Posgrado con tu factura para el cobro de tus haberes.</div>
     <ol class="docs num">
       <li><details><summary>
         <span class="txt">Acta de defensa</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
@@ -482,12 +495,15 @@ td.no{color:var(--boxline)}
     </ol>
     </div>
     <h2 style="margin-top:36px">Procesar el pago</h2>
+    <h3>Docente</h3>
     <ol class="plain">
       <li>Carga toda la documentación al drive de la asignatura, dentro de la carpeta «Portafolio docente».</li>
       <li>Respeta la fecha límite de recepción de documentos de cada mes. <span class="pend">Fecha límite: pendiente</span></li>
       <li>Una vez revisados y verificados los documentos, la Facultad de Posgrado solicitará los requisitos finales:
         <ul><li>Factura electrónica.</li><li>Certificado de RUC.</li></ul></li>
     </ol>
+    <h3 style="margin-top:18px">Revisores, tutores y tribunales</h3>
+    <p class="plainp">48 horas después de realizada la defensa y aprobación del trabajo de titulación, podrás acudir a las oficinas de la Facultad de Posgrado con tu factura para el cobro de tus haberes.</p>
     <h3 style="margin-top:22px">Detalle de la factura</h3>
     <div class="invoice">
       <dl>
@@ -525,5 +541,11 @@ addEventListener('hashchange',route);route();
 document.querySelectorAll('.roles button').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.roles button').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('.rolepanel').forEach(p=>p.hidden=p.id!=='r-'+b.dataset.role);
+}));
+document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()=>{
+  const el=document.getElementById(b.dataset.copy);
+  try{await navigator.clipboard.writeText(el.textContent);b.textContent='Copiado'}
+  catch(_){const r=document.createRange();r.selectNodeContents(el);const g=getSelection();g.removeAllRanges();g.addRange(r);b.textContent='Seleccionado'}
+  setTimeout(()=>b.textContent='Copiar',1800);
 }));
 </script>
