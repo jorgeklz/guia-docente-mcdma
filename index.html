@@ -6,15 +6,15 @@
 /* Layout: páginas tipo Notion (portada verde, ícono, título, desplegables) en columna de 720px; un hash por paso */
 :root{
   --bg:#ffffff; --tint:#f5f8f6; --fg:#1b2a22; --muted:#66786e; --line:#e3ece7;
-  --green:#00633b; --green-deep:#003f27; --green-soft:#e6f2ec; --accent:#2e9e6a;
+  --green:#00633b; --check:#1fa463; --boxline:#cdd6d1; --green-deep:#003f27; --green-soft:#e6f2ec; --accent:#2e9e6a;
   --warn-bg:#fff6e0; --warn-fg:#6b4a00; --cover-a:#003f27; --cover-b:#00633b;
   --font:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0e1612; --tint:#15211b; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --green-soft:#16301f; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0e1612; --tint:#15211b; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --green-soft:#16301f; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -54,9 +54,11 @@ summary:hover{background:var(--tint)}
 summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .chk{display:grid;margin-top:2px;cursor:pointer}
 .chk input{position:absolute;opacity:0;width:0;height:0}
-.box{width:22px;height:22px;border:1.6px solid var(--muted);border-radius:6px;display:grid;place-items:center;color:transparent;background:var(--bg)}
+.box{width:22px;height:22px;border:1.6px solid var(--boxline);border-radius:6px;display:grid;place-items:center;color:transparent;background:var(--bg)}
 .box svg{width:14px;height:14px;stroke-width:2.4}
-.chk input:checked+.box{background:var(--green);border-color:var(--green);color:#fff}
+.chk input:checked+.box{background:var(--check);border-color:var(--check);color:#fff}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .chk input:checked+.box{color:#06210f}}
+:root[data-theme="dark"] .chk input:checked+.box{color:#06210f}
 .chk input:focus-visible+.box{outline:2px solid var(--accent);outline-offset:2px}
 .txt{flex:1;min-width:0;font-weight:500}
 ol.num .txt::before{content:counter(d) ". ";color:var(--green)}
@@ -117,18 +119,6 @@ ol.plain ul{margin:6px 0 0;padding-left:20px}
   .callout{padding:14px}
   .pager{flex-direction:column}
 }
-.tl{list-style:none;margin:0;padding:4px 0 14px;display:flex;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch}
-.tl li{flex:0 0 196px;position:relative;padding-right:14px;scroll-snap-align:start;min-width:0}
-.tl li:not(:last-child)::before{content:"";position:absolute;left:36px;right:4px;top:15px;height:2px;background:linear-gradient(90deg,var(--green),var(--accent));opacity:.45}
-.tl li:not(:last-child)::after{content:"";position:absolute;right:4px;top:11px;width:8px;height:8px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:rotate(45deg);opacity:.7}
-.tl-dot{position:relative;z-index:1;width:32px;height:32px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-size:13px;font-weight:600;box-shadow:0 0 0 4px var(--bg),0 0 0 5px var(--green-soft)}
-.tl-body{display:flex;flex-direction:column;align-items:flex-start;gap:8px;margin-top:14px;min-width:0}
-.tl-role{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
-.tl-t{font-weight:500;font-size:14px;line-height:1.4}
-.tl-t .ref{display:block;margin-top:2px;white-space:normal}
-.tl-chip{font-size:12.5px;font-weight:500;line-height:1.35;background:var(--green-soft);color:var(--green);padding:4px 12px;border-radius:12px}
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .tl-dot{color:#06210f}}
-:root[data-theme="dark"] .tl-dot{color:#06210f}
 ol.pad .txt::before{content:counter(d,decimal-leading-zero) ". ";color:var(--green)}
 .stack{display:flex;flex-direction:column;gap:6px}
 .stack .stack{margin-top:8px}
@@ -143,7 +133,7 @@ th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
 th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500}
 tr:last-child td{border-bottom:0}
 td:first-child{font-weight:500}
-.ck{color:var(--green)}
+.ck{color:var(--check)}
 td.no{color:var(--muted)}
 @media (prefers-reduced-motion:reduce){.bar i,.chev,details{transition:none}}
 </style>
@@ -421,9 +411,6 @@ td.no{color:var(--muted)}
 </div>
 </div></details>
     </div>
-    <h2 style="margin-top:32px">Plazos clave</h2>
-    <p class="hint">Lo que debes cumplir como tutor, revisor o miembro del tribunal. Desliza hacia la derecha para ver todos los plazos.</p>
-    <ol class="tl"><li><span class="tl-dot">1</span><div class="tl-body"><span class="tl-role">Tutor</span><div class="tl-t">Informe de avance al Coordinador<span class="ref"> Art. 56</span></div><span class="tl-chip">Cada mes</span></div></li><li><span class="tl-dot">2</span><div class="tl-body"><span class="tl-role">Tutor</span><div class="tl-t">Alerta por falta de reportes del estudiante<span class="ref"> Art. 100</span></div><span class="tl-chip">30 días: notificación · 45 días: informe</span></div></li><li><span class="tl-dot">3</span><div class="tl-body"><span class="tl-role">Tutor</span><div class="tl-t">Revisión antiplagio<span class="ref"> Art. 70</span></div><span class="tl-chip">5 días para tramitar · 5 para devolver</span></div></li><li><span class="tl-dot">4</span><div class="tl-body"><span class="tl-role">Tutor</span><div class="tl-t">Certificación del tutor<span class="ref"> Art. 71</span></div><span class="tl-chip">Máximo 5 días</span></div></li><li><span class="tl-dot">5</span><div class="tl-body"><span class="tl-role">Revisor · solo tesis</span><div class="tl-t">Informe de revisión<span class="ref"> Art. 72</span></div><span class="tl-chip">15 días</span></div></li><li><span class="tl-dot">6</span><div class="tl-body"><span class="tl-role">Tribunal</span><div class="tl-t">Exposición del estudiante<span class="ref"> Art. 75</span></div><span class="tl-chip">20 a 30 minutos</span></div></li><li><span class="tl-dot">7</span><div class="tl-body"><span class="tl-role">Tribunal</span><div class="tl-t">Ausencia de un miembro al iniciar<span class="ref"> Art. 99</span></div><span class="tl-chip">Espera máxima de 15 minutos</span></div></li><li><span class="tl-dot">8</span><div class="tl-body"><span class="tl-role">Tribunal y revisor</span><div class="tl-t">Cambios tras la predefensa (tesis)<span class="ref"> Art. 76</span></div><span class="tl-chip">30 días para el estudiante</span></div></li></ol>
     <div class="pager"><a href="#paso3"><svg class="i"><use href="#i-left"/></svg>3. Durante el módulo</a><a href="#paso5">5. Checklist para pagos<svg class="i"><use href="#i-right"/></svg></a></div>
   </section>
   <!-- PASO 5 -->
@@ -452,11 +439,11 @@ td.no{color:var(--muted)}
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Carátula</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
-        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que esté incluido en el paquete.</p></div></details></li>
+        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que se encuentre cargado en el drive de la asignatura.</p></div></details></li>
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Certificación del coordinador</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
-        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que esté incluido en el paquete.</p></div></details></li>
+        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que se encuentre cargado en el drive de la asignatura.</p></div></details></li>
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Documentos del docente</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
@@ -480,7 +467,7 @@ td.no{color:var(--muted)}
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Informe del coordinador</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
-        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que esté incluido en el paquete.</p></div></details></li>
+        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que se encuentre cargado en el drive de la asignatura.</p></div></details></li>
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Acta de calificaciones</span><span class="tag">SGU</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
@@ -488,7 +475,7 @@ td.no{color:var(--muted)}
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Análisis de encuesta</span><span class="tag">Coordinador</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
-        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que esté incluido en el paquete.</p></div></details></li>
+        <div class="detail"><p>Este documento está a cargo del coordinador. Confirma que se encuentre cargado en el drive de la asignatura.</p></div></details></li>
       <li><details><summary>
         <label class="chk"><input type="checkbox"><span class="box"><svg class="i"><use href="#i-check"/></svg></span></label>
         <span class="txt">Preguntas para examen complexivo</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
