@@ -141,6 +141,24 @@ td.num{color:var(--muted);font-variant-numeric:tabular-nums;width:1%;white-space
 .ck{color:var(--check)}
 td.no{color:var(--boxline)}
 @media (prefers-reduced-motion:reduce){.bar i,.chev,details{transition:none}}
+/* ajustes finales para celular: van al final para no ser anulados por las reglas base */
+@media (max-width:640px){
+  .page{overflow-wrap:break-word}
+  .tabs{flex-wrap:wrap;overflow:visible;margin-right:0;padding-bottom:0}
+  .tabs a{white-space:normal;font-size:12.5px;padding:3px 12px}
+  .crumb{font-size:12px}
+  .tag{white-space:normal}
+  .roles button{font-size:12.5px;padding:4px 12px}
+  table{min-width:0;font-size:13px}
+  th,td{padding:8px 6px}
+  th{font-size:10px;letter-spacing:.02em}
+  td.num{padding-left:8px}
+  td.mut{white-space:normal}
+  .invoice dl{grid-template-columns:minmax(0,1fr);gap:0}
+  .invoice dt{margin-top:8px}
+  .pill{max-width:100%;white-space:normal;overflow-wrap:anywhere}
+  .callout{gap:10px}
+}
 </style>
 
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
@@ -434,7 +452,7 @@ td.no{color:var(--boxline)}
         <div class="detail"><p>Los documentos de tu expediente de contratación. Ver <a href="#paso1">1. Requisitos para la contratación</a>.</p></div></details></li>
       <li><details><summary>
         <span class="txt">Copias del contrato</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
-        <div class="detail"><p>Copias del contrato suscrito por servicios profesionales.</p></div></details></li>
+        <div class="detail"><p>Copias del contrato suscrito por servicios profesionales. Debe estar firmado por el docente y la gerente de la empresa EMSERVING EP.</p></div></details></li>
       <li><details><summary>
         <span class="txt">Syllabus</span><span class="tag">Docente</span><svg class="i chev"><use href="#i-chev"/></svg></summary>
         <div class="detail"><p>El sílabo de la asignatura, aprobado y firmado antes del inicio. Ver <a href="#paso2">2. Antes de empezar la asignatura</a>.</p></div></details></li>
