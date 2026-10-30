@@ -12,15 +12,15 @@
 /* Layout: páginas tipo Notion (portada verde, ícono, título, desplegables) en columna de 720px; un hash por paso */
 :root{
   --bg:#ffffff; --tint:#f5f8f6; --gray:#eceeed; --fg:#1b2a22; --muted:#66786e; --line:#e3ece7;
-  --green:#00633b; --check:#1fa463; --boxline:#cdd6d1; --green-deep:#003f27; --green-soft:#e6f2ec; --note-bg:#fffbea; --note-ic:#b7861a; --note-line:#ecdca0; --card:#f1f4f2; --card-h:#e8edea; --accent:#2e9e6a;
+  --green:#00633b; --check:#1fa463; --boxline:#cdd6d1; --green-deep:#003f27; --green-soft:#e6f2ec; --note-bg:#fffbea; --note-ic:#b7861a; --note-line:#ecdca0; --panel:#f3f4f4; --panel-line:#e2e5e4; --card:#f1f4f2; --card-h:#e8edea; --accent:#2e9e6a;
   --warn-bg:#fff6e0; --warn-fg:#6b4a00; --cover-a:#003f27; --cover-b:#00633b;
   --font:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --note-bg:#25220f; --note-ic:#e0b94d; --note-line:#4a4220; --card:#1a2420; --card-h:#222d28; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --note-bg:#25220f; --note-ic:#e0b94d; --note-line:#4a4220; --panel:#1b201e; --panel-line:#2a322e; --card:#1a2420; --card-h:#222d28; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --note-bg:#25220f; --note-ic:#e0b94d; --note-line:#4a4220; --card:#1a2420; --card-h:#222d28; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --note-bg:#25220f; --note-ic:#e0b94d; --note-line:#4a4220; --panel:#1b201e; --panel-line:#2a322e; --card:#1a2420; --card-h:#222d28; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -119,7 +119,7 @@ ol.plain ul{margin:6px 0 0;padding-left:20px}
   .pager{flex-direction:column}
 }
 ol.pad .txt::before{content:counter(d,decimal-leading-zero) ". ";color:var(--green)}
-.invoice{border:1px solid #dfe3e1;border-radius:12px;padding:14px 16px;background:var(--gray);min-width:0}
+.invoice{border:1px solid var(--panel-line);border-radius:12px;padding:14px 16px;background:var(--panel);min-width:0}
 .invoice p{margin:0 0 6px;font-size:12.33px}
 .invoice p:last-child{margin-bottom:0}
 .inv-t{font-size:11.33px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
