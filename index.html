@@ -12,15 +12,15 @@
 /* Layout: páginas tipo Notion (portada verde, ícono, título, desplegables) en columna de 720px; un hash por paso */
 :root{
   --bg:#ffffff; --tint:#f5f8f6; --gray:#eceeed; --fg:#1b2a22; --muted:#66786e; --line:#e3ece7;
-  --green:#00633b; --check:#1fa463; --boxline:#cdd6d1; --green-deep:#003f27; --green-soft:#e6f2ec; --card:#eef5f1; --accent:#2e9e6a;
+  --green:#00633b; --check:#1fa463; --boxline:#cdd6d1; --green-deep:#003f27; --green-soft:#e6f2ec; --note-bg:#fffbea; --note-ic:#b7861a; --note-line:#ecdca0; --card:#eef5f1; --accent:#2e9e6a;
   --warn-bg:#fff6e0; --warn-fg:#6b4a00; --cover-a:#003f27; --cover-b:#00633b;
   --font:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --card:#1a2a22; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --note-bg:#25220f; --note-ic:#e0b94d; --note-line:#4a4220; --card:#1a2a22; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --card:#1a2a22; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --note-bg:#25220f; --note-ic:#e0b94d; --note-line:#4a4220; --card:#1a2a22; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -43,8 +43,9 @@ h1{font-size:16.33px;line-height:1.25;font-weight:600;margin:28px 0 6px;text-wra
 .sub{color:var(--muted);font-size:12.33px;display:flex;align-items:center;gap:8px;margin:0 0 28px}
 hr{border:0;border-top:1px solid var(--line);margin:0 0 28px}
 
-.callout{display:flex;gap:14px;background:var(--green-soft);border-radius:12px;padding:16px 18px;margin-bottom:28px}
-.callout svg{color:var(--green);margin-top:3px}
+.callout{display:flex;gap:14px;background:var(--note-bg);border-radius:12px;padding:16px 18px;margin-bottom:28px}
+.callout svg{color:var(--note-ic);margin-top:3px}
+.callout .copy{border-color:var(--note-line)}
 .callout p{margin:0}
 h2{font-size:14.33px;font-weight:600;margin:0 0 4px}
 .hint{color:var(--muted);font-size:12.33px;margin:0 0 12px}
@@ -141,7 +142,7 @@ details details{background:var(--bg);border-color:var(--line)}
 .tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
 table{border-collapse:collapse;width:100%;min-width:460px;font-size:12.33px}
 th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
-th{font-size:11.33px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500}
+th{font-size:11.33px;color:var(--muted);font-weight:500}
 tr:last-child td{border-bottom:0}
 td:first-child{font-weight:500}
 td.num{color:var(--muted);font-variant-numeric:tabular-nums;width:1%;white-space:nowrap}
@@ -194,7 +195,7 @@ td.no{color:var(--boxline)}
   .roles button{font-size:12.83px;padding:4px 12px}
   table{min-width:0;font-size:12.33px}
   th,td{padding:8px 6px}
-  th{font-size:11.33px;letter-spacing:.02em}
+  th{font-size:11.33px}
   td.num{padding-left:8px}
   td.mut{white-space:normal}
   .invoice dl{grid-template-columns:minmax(0,1fr);gap:0}
@@ -424,7 +425,7 @@ td.no{color:var(--boxline)}
 <details><summary><span class="txt">4.2 Revisor</span><span class="tag">Solo proyecto de investigación (tesis)</span><svg class="i chev"><use href="#i-chev"/></svg></summary><div class="detail">
 <div class="warn"><svg class="i"><use href="#i-alert"/></svg><span><strong>Solo en la modalidad proyecto de investigación (tesis).</strong> El artículo de alto nivel y el examen complexivo no tienen revisor.</span></div>
 <p>El Comité del programa sugiere a la Comisión de Titulación un revisor entre los especialistas con mayor dominio del tema. <span class="ref">Art. 72</span></p>
-<h3>Qué debes hacer</h3>
+<h3>¿Qué debes hacer?</h3>
 <ol>
 <li>Revisar de forma detallada el informe final del trabajo de titulación, considerando la metodología de investigación establecida.</li>
 <li>Emitir un <strong>informe de revisión</strong> con juicio crítico, científico y ético: méritos, insuficiencias, señalamientos y sugerencias para mejorar la memoria escrita.</li>
