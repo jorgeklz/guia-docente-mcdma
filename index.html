@@ -12,15 +12,15 @@
 /* Layout: páginas tipo Notion (portada verde, ícono, título, desplegables) en columna de 720px; un hash por paso */
 :root{
   --bg:#ffffff; --tint:#f5f8f6; --gray:#eceeed; --fg:#1b2a22; --muted:#66786e; --line:#e3ece7;
-  --green:#00633b; --check:#1fa463; --boxline:#cdd6d1; --green-deep:#003f27; --green-soft:#e6f2ec; --note-bg:#fffbea; --note-ic:#b7861a; --note-line:#ecdca0; --card:#eef5f1; --accent:#2e9e6a;
+  --green:#00633b; --check:#1fa463; --boxline:#cdd6d1; --green-deep:#003f27; --green-soft:#e6f2ec; --note-bg:#fffbea; --note-ic:#b7861a; --note-line:#ecdca0; --card:#f1f4f2; --card-h:#e8edea; --accent:#2e9e6a;
   --warn-bg:#fff6e0; --warn-fg:#6b4a00; --cover-a:#003f27; --cover-b:#00633b;
   --font:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --note-bg:#25220f; --note-ic:#e0b94d; --note-line:#4a4220; --card:#1a2a22; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --note-bg:#25220f; --note-ic:#e0b94d; --note-line:#4a4220; --card:#1a2420; --card-h:#222d28; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --note-bg:#25220f; --note-ic:#e0b94d; --note-line:#4a4220; --card:#1a2a22; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --note-bg:#25220f; --note-ic:#e0b94d; --note-line:#4a4220; --card:#1a2420; --card-h:#222d28; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -45,7 +45,10 @@ hr{border:0;border-top:1px solid var(--line);margin:0 0 28px}
 
 .callout{display:flex;gap:14px;background:var(--note-bg);border-radius:12px;padding:16px 18px;margin-bottom:28px}
 .callout svg{color:var(--note-ic);margin-top:3px}
-.callout .copy{border-color:var(--note-line)}
+.callout .copy{border-color:var(--note-line);color:#8a6410;background:#fff7d1}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .callout .copy{color:#e0b94d;background:#352f12}}
+:root[data-theme="dark"] .callout .copy{color:#e0b94d;background:#352f12}
+.callout .copy:hover{border-color:var(--note-ic)}
 .callout p{margin:0}
 h2{font-size:14.33px;font-weight:600;margin:0 0 4px}
 .hint{color:var(--muted);font-size:12.33px;margin:0 0 12px}
@@ -58,7 +61,7 @@ details[open]{background:var(--bg);border-color:var(--green)}
 details[open]>summary{background:var(--card)}
 summary{list-style:none;display:flex;gap:14px;align-items:flex-start;padding:12px 14px;cursor:pointer;border-radius:12px}
 summary::-webkit-details-marker{display:none}
-summary:hover{background:var(--green-soft)}
+summary:hover{background:var(--card-h)}
 summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .txt{flex:1;min-width:0;font-weight:500}
 ol.num .txt::before{content:counter(d) ". ";color:var(--green)}
