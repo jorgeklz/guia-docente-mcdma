@@ -12,15 +12,15 @@
 /* Layout: páginas tipo Notion (portada verde, ícono, título, desplegables) en columna de 720px; un hash por paso */
 :root{
   --bg:#ffffff; --tint:#f5f8f6; --gray:#eceeed; --fg:#1b2a22; --muted:#66786e; --line:#e3ece7;
-  --green:#00633b; --check:#1fa463; --boxline:#cdd6d1; --green-deep:#003f27; --green-soft:#e6f2ec; --accent:#2e9e6a;
+  --green:#00633b; --check:#1fa463; --boxline:#cdd6d1; --green-deep:#003f27; --green-soft:#e6f2ec; --card:#eef5f1; --accent:#2e9e6a;
   --warn-bg:#fff6e0; --warn-fg:#6b4a00; --cover-a:#003f27; --cover-b:#00633b;
   --font:'Poppins',system-ui,-apple-system,'Segoe UI',sans-serif;
 }
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
-  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --card:#1a2a22; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --accent:#4cc98a;
+  --bg:#0e1612; --tint:#15211b; --gray:#1c2521; --fg:#e6f0eb; --muted:#92a79c; --line:#22332a; --green:#4cc98a; --check:#3ddc84; --boxline:#3a4a41; --green-soft:#16301f; --card:#1a2a22; --accent:#4cc98a;
   --warn-bg:#2e2610; --warn-fg:#f0d58a; --cover-a:#0b2a1c; --cover-b:#14583a; color-scheme:dark}
 
 *{box-sizing:border-box}
@@ -52,11 +52,12 @@ a{color:var(--green);overflow-wrap:anywhere}
 
 ol.docs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;counter-reset:d}
 ol.docs>li{counter-increment:d}
-details{border:1px solid var(--line);border-radius:12px;transition:background .15s}
+details{border:1px solid var(--boxline);border-radius:12px;background:var(--card);transition:background .15s}
 details[open]{background:var(--bg);border-color:var(--green)}
+details[open]>summary{background:var(--card)}
 summary{list-style:none;display:flex;gap:14px;align-items:flex-start;padding:12px 14px;cursor:pointer;border-radius:12px}
 summary::-webkit-details-marker{display:none}
-summary:hover{background:var(--tint)}
+summary:hover{background:var(--green-soft)}
 summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .txt{flex:1;min-width:0;font-weight:500}
 ol.num .txt::before{content:counter(d) ". ";color:var(--green)}
@@ -378,7 +379,7 @@ td.no{color:var(--boxline)}
       <svg class="i"><use href="#i-cap"/></svg>
       <p>La maestría ofrece tres modalidades de titulación: proyecto de investigación (tesis), artículo de alto nivel y examen complexivo.</p>
     </div>
-    <h2>Quién interviene en cada modalidad</h2>
+    <h2>¿Quién interviene en cada modalidad?</h2>
     <div class="tbl"><table>
       <thead><tr><th>Modalidad</th><th>Tutor o cotutor</th><th>Revisor</th><th>Tribunal</th></tr></thead>
       <tbody>
@@ -601,6 +602,7 @@ document.querySelectorAll('.copy').forEach(b=>b.addEventListener('click',async()
   setTimeout(()=>b.textContent='Copiar',1800);
 }));
 </script>
+
 
 </body>
 </html>
